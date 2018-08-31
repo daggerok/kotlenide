@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>kotlenide (0.0.1)</title>
-<date>2018-08-31 22:55:36 UTC</date>
+<date>2018-08-31 23:07:37 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2018-08-31 22:55:36 UTC</date>
+<date>2018-08-31 23:07:37 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -35,9 +35,8 @@
 <chapter xml:id="usage-todo">
 <title>Usage (TODO)</title>
 <formalpara>
-<title>My goal is implement idiomatic kotlin DSL for UI ent-to-end testing,</title>
-<para>which under the hood is using famous good known <link xl:href="http://selenide.org/">selenide</link> functionality:</para>
-</formalpara>
+<title>At the moment, my goal is implement idiomatic kotlin DSL for UI ent-to-end testing, which under the hood is using famous good known <link xl:href="http://selenide.org/">selenide</link> functionality:</title>
+<para>
 <programlisting language="kotlin" linenumbering="unnumbered">class AwesomeTests {
   @Test fun ‘selenide with idiomatic kotlin should be awesome’() {
     open("http://127.0.0.1:8080") {
@@ -52,6 +51,8 @@
     }
   }
 }</programlisting>
+</para>
+</formalpara>
 </chapter>
 <chapter xml:id="how-to-work-in-progress">
 <title>How to (work in progress)</title>
