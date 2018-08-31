@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>kotlenide (0.0.1)</title>
-<date>2018-08-31 20:02:10 UTC</date>
+<date>2018-08-31 22:55:36 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2018-08-31 20:02:10 UTC</date>
+<date>2018-08-31 22:55:36 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -32,11 +32,12 @@
 </mediaobject>
 </informalfigure>
 </preface>
-<chapter xml:id="usage-not-yet-implemented-sorry">
-<title>Usage (not yet implemented! sorry&#8230;&#8203;)</title>
+<chapter xml:id="usage-todo">
+<title>Usage (TODO)</title>
 <formalpara>
-<title>gotal is implement some kinde of DSL like this:</title>
-<para>
+<title>My goal is implement idiomatic kotlin DSL for UI ent-to-end testing,</title>
+<para>which under the hood is using famous good known <link xl:href="http://selenide.org/">selenide</link> functionality:</para>
+</formalpara>
 <programlisting language="kotlin" linenumbering="unnumbered">class AwesomeTests {
   @Test fun ‘selenide with idiomatic kotlin should be awesome’() {
     open("http://127.0.0.1:8080") {
@@ -51,6 +52,99 @@
     }
   }
 }</programlisting>
+</chapter>
+<chapter xml:id="how-to-work-in-progress">
+<title>How to (work in progress)</title>
+<formalpara>
+<title>java: <literal>Selenide.open(String relativeOrAbsoluteUrl)</literal></title>
+<para>
+<programlisting language="java" linenumbering="unnumbered">  @Test
+  @DispayName("should open method with String argument")
+  void test() {
+    open("https://google.com")
+    // ...
+    close()
+  }</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>kotlin: <literal>String.open { &#8230;&#8203; }</literal></title>
+<para>
+<programlisting language="kotlin" linenumbering="unnumbered">  @Test fun `should open String extension function`() {
+    "https://google.com".open {
+      // ...
+      close()
+    }
+  }
+
+  // or:
+
+  @Test fun `should open Pair extension function with free first key contract`() {
+    ("url" to "https://google.com").open {
+      sleep(1000)
+      close()
+    }
+  }</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>java: <literal>Selenide.open(URL absoluteUrl)</literal></title>
+<para>
+<programlisting language="java" linenumbering="unnumbered">  @Test
+  @DispayName("should open method with URL argument")
+  void test() {
+    open(new URL("https://ya.ru"))
+    // ...
+    close()
+  }</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>kotlin: <literal>URL.open { &#8230;&#8203; }</literal></title>
+<para>
+<programlisting language="kotlin" linenumbering="unnumbered">  @Test fun `should open URL extension function`() {
+    URL("https://ya.ru").open {
+      // ...
+      close()
+    }
+  }</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>java: <literal>Selenide.open(String relativeOrAbsoluteUrl, String domain, String login, String password)</literal></title>
+<para>
+<programlisting language="java" linenumbering="unnumbered">  @Test
+  @DispayName("should open using string arguments by some contract")
+  void test() {
+    open("https://blog.example.com?q=java", "example.com", "login", "password")
+    // ...
+    close()
+  }</programlisting>
+</para>
+</formalpara>
+<formalpara>
+<title>kotlin: <literal>Map&lt;String, String&gt;.open { &#8230;&#8203; }</literal></title>
+<para>
+<programlisting language="kotlin" linenumbering="unnumbered">  @Test fun `should open Map extension function minimal contract`() {
+    mapOf("relativeOrAbsoluteUrl" to "https://google.com").open {
+      // ...
+      close()
+    }
+  }
+
+  // or:
+
+  @Test fun `should open Map extension function full contract`() {
+    mapOf(
+      "relativeOrAbsoluteUrl" to "https://blog.example.com?q=java",
+      "domain" to "example.com",
+      "login" to "login",
+      "password" to "password"
+    ) {
+      // ...
+      close()
+    }
+  }</programlisting>
 </para>
 </formalpara>
 <simpara>TODO: implement documentation&#8230;&#8203;</simpara>

@@ -463,13 +463,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span id="author" class="author">Maksim Kostromin</span><br>
 <span id="email" class="email"><a href="mailto:daggerok@gmail.com">daggerok@gmail.com</a></span><br>
 <span id="revnumber">version 0.0.1,</span>
-<span id="revdate">2018-08-31 20:02:10 UTC</span>
+<span id="revdate">2018-08-31 22:55:36 UTC</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#usage-not-yet-implemented-sorry">1. Usage (not yet implemented! sorry&#8230;&#8203;)</a></li>
-<li><a href="#links">2. Links</a></li>
+<li><a href="#usage-todo">1. Usage (TODO)</a></li>
+<li><a href="#how-to-work-in-progress">2. How to (work in progress)</a></li>
+<li><a href="#links">3. Links</a></li>
 </ul>
 </div>
 </div>
@@ -484,10 +485,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="usage-not-yet-implemented-sorry"><a class="anchor" href="#usage-not-yet-implemented-sorry"></a>1. Usage (not yet implemented! sorry&#8230;&#8203;)</h2>
+<h2 id="usage-todo"><a class="anchor" href="#usage-todo"></a>1. Usage (TODO)</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<div class="title">My goal is implement idiomatic kotlin DSL for UI ent-to-end testing,</div>
+<p>which under the hood is using famous good known <a href="http://selenide.org/">selenide</a> functionality:</p>
+</div>
 <div class="listingblock">
-<div class="title">gotal is implement some kinde of DSL like this:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">class AwesomeTests {
   @Test fun ‘selenide with idiomatic kotlin should be awesome’() {
@@ -505,13 +509,110 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 }</code></pre>
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="how-to-work-in-progress"><a class="anchor" href="#how-to-work-in-progress"></a>2. How to (work in progress)</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">java: <code>Selenide.open(String relativeOrAbsoluteUrl)</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  @Test
+  @DispayName("should open method with String argument")
+  void test() {
+    open("https://google.com")
+    // ...
+    close()
+  }</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">kotlin: <code>String.open { &#8230;&#8203; }</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">  @Test fun `should open String extension function`() {
+    "https://google.com".open {
+      // ...
+      close()
+    }
+  }
+
+  // or:
+
+  @Test fun `should open Pair extension function with free first key contract`() {
+    ("url" to "https://google.com").open {
+      sleep(1000)
+      close()
+    }
+  }</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">java: <code>Selenide.open(URL absoluteUrl)</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  @Test
+  @DispayName("should open method with URL argument")
+  void test() {
+    open(new URL("https://ya.ru"))
+    // ...
+    close()
+  }</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">kotlin: <code>URL.open { &#8230;&#8203; }</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">  @Test fun `should open URL extension function`() {
+    URL("https://ya.ru").open {
+      // ...
+      close()
+    }
+  }</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">java: <code>Selenide.open(String relativeOrAbsoluteUrl, String domain, String login, String password)</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  @Test
+  @DispayName("should open using string arguments by some contract")
+  void test() {
+    open("https://blog.example.com?q=java", "example.com", "login", "password")
+    // ...
+    close()
+  }</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">kotlin: <code>Map&lt;String, String&gt;.open { &#8230;&#8203; }</code></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">  @Test fun `should open Map extension function minimal contract`() {
+    mapOf("relativeOrAbsoluteUrl" to "https://google.com").open {
+      // ...
+      close()
+    }
+  }
+
+  // or:
+
+  @Test fun `should open Map extension function full contract`() {
+    mapOf(
+      "relativeOrAbsoluteUrl" to "https://blog.example.com?q=java",
+      "domain" to "example.com",
+      "login" to "login",
+      "password" to "password"
+    ) {
+      // ...
+      close()
+    }
+  }</code></pre>
+</div>
+</div>
 <div class="paragraph">
 <p>TODO: implement documentation&#8230;&#8203;</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="links"><a class="anchor" href="#links"></a>2. Links</h2>
+<h2 id="links"><a class="anchor" href="#links"></a>3. Links</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -532,7 +633,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2018-08-31 20:02:10 UTC
+Last updated 2018-08-31 22:55:36 UTC
 </div>
 </div>
 <!-- jquery -->
