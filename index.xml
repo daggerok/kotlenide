@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc maxdepth="4"?>
+<?asciidoc-numbered?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
+<title>kotlenide-parent (0.0.1)</title>
+<date>2018-08-31 19:43:51 UTC</date>
+<author>
+<personname>
+<firstname>Maksim</firstname>
+<surname>Kostromin</surname>
+</personname>
+<email>daggerok@gmail.com</email>
+</author>
+<authorinitials>MK</authorinitials>
+<revhistory>
+<revision>
+<revnumber>0.0.1</revnumber>
+<date>2018-08-31 19:43:51 UTC</date>
+<authorinitials>MK</authorinitials>
+</revision>
+</revhistory>
+</info>
+<chapter xml:id="introduction">
+<title>Introduction</title>
+<simpara>Status: in development&#8230;&#8203;</simpara>
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="./logo.png"/>
+</imageobject>
+<textobject><phrase>logo</phrase></textobject>
+</mediaobject>
+</informalfigure>
+<simpara>Read <link xl:href="https://daggerok.github.io/kotlenide">project reference documentation</link></simpara>
+<simpara><emphasis role="strong">usage (this is not yet implemented&#8230;&#8203;)</emphasis></simpara>
+<formalpara>
+<title>gotal is implement some kinde of DSL like this:</title>
+<para>
+<programlisting language="kotlin" linenumbering="unnumbered">class AwesomeTests {
+  @Test fun ‘selenide with idiomatic kotlin should be awesome’() {
+    open("http://127.0.0.1:8080") {
+      it.find("form") {
+        it.find("input[type='text']") {
+          it sendKeys "hola!"
+        }
+        it.find("button") {
+          it press enter
+        }
+      }
+    }
+  }
+}</programlisting>
+</para>
+</formalpara>
+<simpara>links:</simpara>
+<itemizedlist>
+<listitem>
+<simpara><link xl:href="https://kotlinlang.org/">Kotlin</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xl:href="http://selenide.org/">Selenide</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xl:href="https://www141.lunapic.com/">Awesome free online images editor LunaPic</link></simpara>
+</listitem>
+</itemizedlist>
+</chapter>
+<chapter xml:id="license">
+<title>License</title>
+<simpara><link xl:href="./LICENSE">MIT</link></simpara>
+</chapter>
+<chapter xml:id="implementation">
+<title>Implementation</title>
+<simpara>TODO: implement documentation&#8230;&#8203;</simpara>
+</chapter>
+<chapter xml:id="links">
+<title>Links</title>
+<itemizedlist>
+<listitem>
+<simpara><link xl:href="https://github.com/daggerok/kotlenide-parent">GitHub repo</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xl:href="https://daggerok.github.io/kotlenide-parent">GitHub pages</link></simpara>
+</listitem>
+</itemizedlist>
+</chapter>
+</book>
