@@ -1,0 +1,42 @@
+static def findAllSelenideSystemProps() {
+  System.properties?.findAll {
+    it.key.toString().contains("selenide") ||
+        it.key.toString().contains("remote") ||
+        it.key.toString().contains("headless") ||
+        it.key.toString().contains("browser")
+  } ?: [:]
+}
+
+allprojects {
+  apply plugin: 'java'
+
+  dependencies {
+    testImplementation("org.hamcrest:hamcrest-core:$hamcrestVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
+  }
+
+  test {
+    systemProperties = findAllSelenideSystemProps()
+    useJUnitPlatform {
+      includeEngines 'junit-jupiter', 'junit-vintage'
+    }
+    failFast = false
+    testLogging {
+      events 'PASSED', 'FAILED', 'SKIPPED'
+      showStandardStreams = true
+      exceptionFormat 'full'
+    }
+    // finalize with summary:
+    afterSuite { desc, result ->
+      if (!desc.parent) {
+        println """\nTest result: ${result.resultType}\n
+    Test summary:
+        ${result.testCount} tests
+        ${result.successfulTestCount} succeeded
+        ${result.failedTestCount} failed
+        ${result.skippedTestCount} skipped\n"""
+      }
+    }
+  }
+}

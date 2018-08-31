@@ -1,0 +1,17 @@
+allprojects {
+  apply plugin: 'java'
+
+  //apply plugin: 'io.franzbecker.gradle-lombok'
+  //lombok.version = project.lombokVersion
+
+  version = '0.0.1'
+  group = 'com.github.daggerok'
+  sourceCompatibility = targetCompatibility = "$javaVersion"
+
+  defaultTasks 'clean', 'build'
+
+  dependencies {
+    testImplementation "org.slf4j:slf4j-api:$slf4jVersion"
+    testCompileOnly "ch.qos.logback:logback-classic:$logbackVersion"
+  }
+}

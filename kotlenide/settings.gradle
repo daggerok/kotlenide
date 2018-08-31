@@ -1,0 +1,2 @@
+rootProject.name = 'kotlenide'
+enableFeaturePreview 'STABLE_PUBLISHING'

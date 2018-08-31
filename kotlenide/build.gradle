@@ -1,0 +1,9 @@
+dependencies {
+  compile "com.codeborne:selenide:$selenideVersion", {
+    exclude module: 'selenium-opera-driver'
+    exclude module: 'selenium-safari-driver'
+    exclude module: 'selenium-edge-driver'
+    exclude module: 'selenium-ie-driver'
+    because "we don't wanna use any of these..."
+  }
+}

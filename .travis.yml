@@ -1,0 +1,93 @@
+notifications:
+  email: false
+
+env:
+  global:
+  - TERM=dumb
+  - secure: ipYFOCI0QHzt30g+yZRAdiUfPT6J2dEL9vHacw83SNFVXEqgDYMkjcZpF+dRI27KrFUgzEbJ8dF8bEL/DE8Hd58O4ndJrbe/YRVcC0hgMe5ApSDYRDobaJXvVDADS0WRoHN0TuZ8pEZqn/44ym5b8X9mAqVOCIqbLYWtswYgonhPHC5XBiIf7SvHdLshwyQIbKdRybcDAZAVD7nWNMosaHZWeSvfQKS0t4ykR4pfa95H2hIEtT0lYyxTjefEn7ZmojCs7FvtEt9SJSPwQ/RPq7TM+pmqykVYuTru8LB8p2TZjWEg9dfW0ZlduhWL67bRFLxg0FeqiOo09QwgXC75bQ/cSDcRSZRPQyWB4M3k6AyNNQ1snqqFYnF0Pma9aDQB2VHOGywT+eXeoTxH8DG1TI7AxXhrG9KPE2p9Ejflg285wWzj8Bi+RDaQ7k0J+Zi/Srk476dgYoVGuyuuD1zU2bhXsdUrKBSSbUWstys4p/MzXn5vxLpVO1/yqQ3L8rR/p4ymA/6LL2Es0qFXnvBCvkgaU+m2NG9oDghMv0ifss7DQ+wy5zCz0qHZyW5VooRAzDt5ak/ZqdkhC6fm8GpMcJddscq/psbb5UDPXjcRKY5dNqSGhTMVJlN4pxbxIGdBed+unOrcqSfWZNtfx5tzrFTRPhY7FLYi2/JeUNvnJiM=
+
+language: java
+jdk:
+- oraclejdk8
+#- oraclejdk10
+
+service:
+- docker
+
+addons:
+  apt:
+    update: true
+    sources:
+    - google-chrome
+    packages:
+    - google-chrome-stable
+    - google-chrome-stable
+    - libappindicator1
+    - fonts-liberation
+    - bash
+    - curl
+    - libxml2-utils
+    - docker-ce
+
+install: true
+before_install:
+- export CHROME_BIN=/usr/bin/google-chrome
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+#
+- sudo add-apt-repository universe -y >/dev/null
+- echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list >/dev/null
+- sudo apt-get update -yqq >/dev/null
+- sudo apt-get install -yqq --no-install-suggests --no-install-recommends
+  tree jq python-pip curl bash sudo >/dev/null
+#
+- sudo pip install docker-compose httpie >/dev/null 2>&1
+#
+- source <(curl -s https://raw.githubusercontent.com/daggerok/bash-functions/master/main.bash)
+- stop_any 8080 3000 80 >/dev/null
+#
+- curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - >/dev/null
+- echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list >/dev/null
+- sudo apt-get update -yqq >/dev/null
+- sudo apt-get install -yqq --no-install-suggests --no-install-recommends yarn >/dev/null
+
+- docker-compose build --pull
+- docker-compose up -d
+
+script:
+- ./gradlew clean build -x test >/dev/null
+- ./mvnw clean package -DskipTests >/dev/null
+
+- export root=$(pwd)
+
+- ./gradlew -Dbrowser=chrome -Drmeote=http://127.0.0.1:4444/wd/hub
+- ./mvnw -DargLine="-Dbrowser=firefox -Dremote=http://127.0.0.1:4444/wd/hub"
+
+before_deploy:
+- cd ${root}
+- ./gradlew clean
+- ./mvnw -Pdocs >/dev/null
+- mkdir -p ./target/generated-docs
+- cp -Rf ./target/generated-docs/index.html ./target/generated-docs/404.html
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  # travis encrypt GITHUB_TOKEN=<your github repo token> --add
+  github-token: "$GITHUB_TOKEN"
+  keep-history: true
+  on:
+    branch: master
+  local-dir: target/generated-docs
+  target_branch: gh-pages
+
+before_cache:
+- for item in $(find ~/.gradle -name "*.lock");
+    do sudo rm -rf $item ;
+  done
+
+cache:
+  directories:
+  - $HOME/.m2
+  - $HOME/.gradle
+  - $HOME/.docker

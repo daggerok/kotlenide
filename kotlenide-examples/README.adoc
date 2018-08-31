@@ -1,0 +1,23 @@
+= kotlenide-examples
+
+//tag::content[]
+
+.run tests locally (default borwser firefox)
+[source,bash]
+----
+./gradlew :kotlenide-examples:test
+
+./mvnw clean install -DskipTests
+./mvnw -pl kotlenide-examples test -DargLine="-Dbrowser=chrome"
+rm -rf ~/.m2/repository/com/github/daggerok/kotlenide-examples
+----
+
+.run tests using selenium-hub
+[source,bash]
+----
+docker-compose up --build
+./gradlew -Dbrowser=chrome -Drmeote=http://127.0.0.1:4444/wd/hub
+./mvnw -DargLine="-Dbrowser=chrome -Dremote=http://127.0.0.1:4444/wd/hub"
+----
+
+//end::content[]

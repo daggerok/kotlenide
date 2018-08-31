@@ -1,0 +1,8 @@
+rootProject.name = 'kotlenide-examples'
+enableFeaturePreview 'STABLE_PUBLISHING'
+
+//includeBuild('../kotlenide') {
+//  dependencySubstitution {
+//    substitute module('com.github.daggerok:kotlenide') with project(':kotlenide')
+//  }
+//}

@@ -1,0 +1,5 @@
+rootProject.name = 'kotlenide-parent'
+enableFeaturePreview 'STABLE_PUBLISHING'
+include 'docs'
+include 'kotlenide'
+include 'kotlenide-examples'

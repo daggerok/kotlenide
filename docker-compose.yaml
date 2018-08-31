@@ -1,0 +1,48 @@
+version: '2.1'
+
+services:
+
+  hub:
+    image: selenium/hub:3.14.0-beryllium
+    ports: ['4444:4444']
+    restart: unless-stopped
+    healthcheck:
+      test: curl -v http://127.0.0.1:4444/grid/console/
+      timeout: 1s
+      retries: 22
+    networks:
+      backing-services:
+        aliases:
+        - hub
+
+  chrome:
+    #shm_size: 2g
+    image: selenium/node-chrome-debug:3.14.0-beryllium
+    depends_on: [hub]
+    environment:
+      HUB_HOST: hub
+      HUB_PORT: 4444
+    ports: ['5900']
+    restart: unless-stopped
+    networks:
+      backing-services:
+        aliases:
+        - chrome
+
+  firefox:
+    #shm_size: 2g
+    image: selenium/node-firefox-debug:3.14.0-beryllium
+    depends_on: [hub]
+    environment:
+      HUB_HOST: hub
+      HUB_PORT: 4444
+    ports: ['5900']
+    restart: unless-stopped
+    networks:
+      backing-services:
+        aliases:
+        - firefox
+
+networks:
+  backing-services:
+    driver: bridge

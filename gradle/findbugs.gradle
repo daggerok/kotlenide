@@ -1,0 +1,15 @@
+allprojects {
+  apply plugin: 'findbugs'
+
+  tasks.withType(FindBugs) {
+    reports {
+      xml.enabled false
+      html.enabled true
+    }
+  }
+
+  findbugs {
+    reportsDir = file("$rootProject.buildDir/findbugs")
+    ignoreFailures = true
+  }
+}
