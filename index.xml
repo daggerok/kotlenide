@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>kotlenide (0.0.1)</title>
-<date>2018-08-31 23:07:37 UTC</date>
+<date>2018-08-31 23:19:57 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2018-08-31 23:07:37 UTC</date>
+<date>2018-08-31 23:19:57 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -80,9 +80,9 @@
 
   // or:
 
-  @Test fun `should open Pair extension function with free first key contract`() {
+  @Test fun `should open Pair extension function with free first key name contract`() {
     ("url" to "https://google.com").open {
-      sleep(1000)
+      // ...
       close()
     }
   }</programlisting>
