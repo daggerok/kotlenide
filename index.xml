@@ -3,8 +3,8 @@
 <?asciidoc-numbered?>
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
-<title>kotlenide (0.0.1)</title>
-<date>2018-09-01 03:58:36 UTC</date>
+<title>kotlenide (0.0.2)</title>
+<date>2018-09-01 05:04:35 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -15,8 +15,8 @@
 <authorinitials>MK</authorinitials>
 <revhistory>
 <revision>
-<revnumber>0.0.1</revnumber>
-<date>2018-09-01 03:58:36 UTC</date>
+<revnumber>0.0.2</revnumber>
+<date>2018-09-01 05:04:35 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -35,18 +35,15 @@
 <chapter xml:id="introduction">
 <title>Introduction</title>
 <formalpara>
-<title>At the moment, my goal is implement idiomatic kotlin DSL for UI ent-to-end testing, which under the hood is using famous good known <link xl:href="http://selenide.org/">selenide</link> functionality:</title>
+<title>idiomatic kotlin DSL for UI ent-to-end testing, which is using famous good known <link xl:href="http://selenide.org/">selenide</link> under the hood:</title>
 <para>
 <programlisting language="kotlin" linenumbering="unnumbered">class AwesomeKotlenideTests {
   @Test fun `selenide using idiomatic kotlin should be awesome`() {
-    "http://127.0.0.1:8080".open {
-      find("form") {
-        it.find("input[type='text']") {
-          it sendKeys "hola!"
-        }
-        it.find("button") {
-          it press enter
-        }
+    "https://google.com".open {
+      find("body") {
+        this contains "Gmail"
+        this has "G"
+        close()
       }
     }
   }
@@ -169,6 +166,9 @@
 </listitem>
 <listitem>
 <simpara><link xl:href="https://kotlinlang.org/docs/reference/type-safe-builders.html">Kotlin DSL guide</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xl:href="https://kotlinlang.org/docs/reference/functions.html#infix-notation">Kotlin infix functions</link></simpara>
 </listitem>
 <listitem>
 <simpara><link xl:href="http://selenide.org/">Selenide</link></simpara>

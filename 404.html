@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.6.1">
 <meta name="author" content="Maksim Kostromin">
-<title>kotlenide (0.0.1)</title>
+<title>kotlenide (0.0.2)</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -458,12 +458,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
-<h1>kotlenide (0.0.1) <span class="image"><a class="image" href="https://github.com/daggerok/kotlenide"><img src="https://travis-ci.org/daggerok/kotlenide.svg?branch=master" alt="Build Status"></a></span></h1>
+<h1>kotlenide (0.0.2) <span class="image"><a class="image" href="https://github.com/daggerok/kotlenide"><img src="https://travis-ci.org/daggerok/kotlenide.svg?branch=master" alt="Build Status"></a></span></h1>
 <div class="details">
 <span id="author" class="author">Maksim Kostromin</span><br>
 <span id="email" class="email"><a href="mailto:daggerok@gmail.com">daggerok@gmail.com</a></span><br>
-<span id="revnumber">version 0.0.1,</span>
-<span id="revdate">2018-09-01 03:58:36 UTC</span>
+<span id="revnumber">version 0.0.2,</span>
+<span id="revdate">2018-09-01 05:04:35 UTC</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -489,18 +489,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="introduction"><a class="anchor" href="#introduction"></a>1. Introduction</h2>
 <div class="sectionbody">
 <div class="listingblock">
-<div class="title">At the moment, my goal is implement idiomatic kotlin DSL for UI ent-to-end testing, which under the hood is using famous good known <a href="http://selenide.org/">selenide</a> functionality:</div>
+<div class="title">idiomatic kotlin DSL for UI ent-to-end testing, which is using famous good known <a href="http://selenide.org/">selenide</a> under the hood:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">class AwesomeKotlenideTests {
   @Test fun `selenide using idiomatic kotlin should be awesome`() {
-    "http://127.0.0.1:8080".open {
-      find("form") {
-        it.find("input[type='text']") {
-          it sendKeys "hola!"
-        }
-        it.find("button") {
-          it press enter
-        }
+    "https://google.com".open {
+      find("body") {
+        this contains "Gmail"
+        this has "G"
+        close()
       }
     }
   }
@@ -650,6 +647,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><a href="https://kotlinlang.org/docs/reference/type-safe-builders.html">Kotlin DSL guide</a></p>
 </li>
 <li>
+<p><a href="https://kotlinlang.org/docs/reference/functions.html#infix-notation">Kotlin infix functions</a></p>
+</li>
+<li>
 <p><a href="http://selenide.org/">Selenide</a></p>
 </li>
 <li>
@@ -679,8 +679,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 0.0.1<br>
-Last updated 2018-09-01 03:58:36 UTC
+Version 0.0.2<br>
+Last updated 2018-09-01 05:04:35 UTC
 </div>
 </div>
 <!-- jquery -->
