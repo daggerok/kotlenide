@@ -463,13 +463,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span id="author" class="author">Maksim Kostromin</span><br>
 <span id="email" class="email"><a href="mailto:daggerok@gmail.com">daggerok@gmail.com</a></span><br>
 <span id="revnumber">version 0.0.1,</span>
-<span id="revdate">2018-09-01 02:19:53 UTC</span>
+<span id="revdate">2018-09-01 03:49:04 UTC</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#how-to-work-in-progress">1. How to (work in progress)</a></li>
-<li><a href="#links">2. Links</a></li>
+<li><a href="#introduction">1. Introduction</a></li>
+<li><a href="#how-to-work-in-progress">2. How to (work in progress)</a></li>
+<li><a href="#links">3. Links</a></li>
+<li><a href="#license">4. License</a></li>
 </ul>
 </div>
 </div>
@@ -481,6 +483,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <img src="./logo.png" alt="logo">
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="introduction"><a class="anchor" href="#introduction"></a>1. Introduction</h2>
+<div class="sectionbody">
 <div class="listingblock">
 <div class="title">At the moment, my goal is implement idiomatic kotlin DSL for UI ent-to-end testing, which under the hood is using famous good known <a href="http://selenide.org/">selenide</a> functionality:</div>
 <div class="content">
@@ -503,10 +510,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="how-to-work-in-progress"><a class="anchor" href="#how-to-work-in-progress"></a>1. How to (work in progress)</h2>
+<h2 id="how-to-work-in-progress"><a class="anchor" href="#how-to-work-in-progress"></a>2. How to (work in progress)</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p><strong>open url (String)</strong></p>
+</div>
 <div class="listingblock">
-<div class="title">java: <code>Selenide.open(String relativeOrAbsoluteUrl)</code></div>
+<div class="title"><em>java</em></div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  @Test
   @DispayName("should open method with String argument")
@@ -517,19 +527,27 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
   }</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><code>open(String relativeOrAbsoluteUrl)</code></p>
+</div>
 <div class="listingblock">
-<div class="title">kotlin: <code>String.open { &#8230;&#8203; }</code></div>
+<div class="title"><em>kotlin</em></div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">  @Test fun `should open String extension function`() {
     "https://google.com".open {
       // ...
       close()
     }
-  }
-
-  // or:
-
-  @Test fun `should open Pair extension function with free first key name contract`() {
+  }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>String.open { &#8230;&#8203; }</code></p>
+</div>
+<div class="listingblock">
+<div class="title"><em>kotlin</em></div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">  @Test fun `should open Pair extension function with free first key name contract`() {
     ("url" to "https://google.com").open {
       // ...
       close()
@@ -537,8 +555,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
   }</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><code>Pair.open { &#8230;&#8203; }</code></p>
+</div>
+<div class="paragraph">
+<p><strong>open absolute url (URL)</strong></p>
+</div>
 <div class="listingblock">
-<div class="title">java: <code>Selenide.open(URL absoluteUrl)</code></div>
+<div class="title"><em>java</em></div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  @Test
   @DispayName("should open method with URL argument")
@@ -549,8 +573,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
   }</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><code>open(URL absoluteUrl)</code></p>
+</div>
 <div class="listingblock">
-<div class="title">kotlin: <code>URL.open { &#8230;&#8203; }</code></div>
+<div class="title"><em>kotlin</em></div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">  @Test fun `should open URL extension function`() {
     URL("https://ya.ru").open {
@@ -560,8 +587,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
   }</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><code>URL.open { &#8230;&#8203; }</code></p>
+</div>
+<div class="paragraph">
+<p><strong>open by &#8230;&#8203;</strong></p>
+</div>
 <div class="listingblock">
-<div class="title">java: <code>Selenide.open(String relativeOrAbsoluteUrl, String domain, String login, String password)</code></div>
+<div class="title">java</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">  @Test
   @DispayName("should open using string arguments by some contract")
@@ -572,8 +605,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
   }</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><code>open(String relativeOrAbsoluteUrl, String domain, String login, String password)</code></p>
+</div>
 <div class="listingblock">
-<div class="title">kotlin: <code>Map&lt;String, String&gt;.open { &#8230;&#8203; }</code></div>
+<div class="title"><em>kotlin</em></div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">  @Test fun `should open Map extension function minimal contract`() {
     mapOf("relativeOrAbsoluteUrl" to "https://google.com").open {
@@ -597,10 +633,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
   }</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><code>Map&lt;String, String&gt;.open { &#8230;&#8203; }</code></p>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="links"><a class="anchor" href="#links"></a>2. Links</h2>
+<h2 id="links"><a class="anchor" href="#links"></a>3. Links</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -627,8 +666,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="license"><a class="anchor" href="#license"></a>4. License</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p><a href="./LICENSE">MIT</a></p>
+<p><a href="https://github.com/daggerok/kotlenide/blob/master/LICENSE">MIT</a></p>
 </div>
 </div>
 </div>
@@ -636,7 +680,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2018-09-01 02:19:53 UTC
+Last updated 2018-09-01 03:49:04 UTC
 </div>
 </div>
 <!-- jquery -->

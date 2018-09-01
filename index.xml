@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>kotlenide (0.0.1)</title>
-<date>2018-09-01 02:19:53 UTC</date>
+<date>2018-09-01 03:49:04 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2018-09-01 02:19:53 UTC</date>
+<date>2018-09-01 03:49:04 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -31,6 +31,9 @@
 <textobject><phrase>logo</phrase></textobject>
 </mediaobject>
 </informalfigure>
+</preface>
+<chapter xml:id="introduction">
+<title>Introduction</title>
 <formalpara>
 <title>At the moment, my goal is implement idiomatic kotlin DSL for UI ent-to-end testing, which under the hood is using famous good known <link xl:href="http://selenide.org/">selenide</link> functionality:</title>
 <para>
@@ -50,11 +53,12 @@
 }</programlisting>
 </para>
 </formalpara>
-</preface>
+</chapter>
 <chapter xml:id="how-to-work-in-progress">
 <title>How to (work in progress)</title>
+<simpara><emphasis role="strong">open url (String)</emphasis></simpara>
 <formalpara>
-<title>java: <literal>Selenide.open(String relativeOrAbsoluteUrl)</literal></title>
+<title><emphasis>java</emphasis></title>
 <para>
 <programlisting language="java" linenumbering="unnumbered">  @Test
   @DispayName("should open method with String argument")
@@ -65,19 +69,23 @@
   }</programlisting>
 </para>
 </formalpara>
+<simpara><literal>open(String relativeOrAbsoluteUrl)</literal></simpara>
 <formalpara>
-<title>kotlin: <literal>String.open { &#8230;&#8203; }</literal></title>
+<title><emphasis>kotlin</emphasis></title>
 <para>
 <programlisting language="kotlin" linenumbering="unnumbered">  @Test fun `should open String extension function`() {
     "https://google.com".open {
       // ...
       close()
     }
-  }
-
-  // or:
-
-  @Test fun `should open Pair extension function with free first key name contract`() {
+  }</programlisting>
+</para>
+</formalpara>
+<simpara><literal>String.open { &#8230;&#8203; }</literal></simpara>
+<formalpara>
+<title><emphasis>kotlin</emphasis></title>
+<para>
+<programlisting language="kotlin" linenumbering="unnumbered">  @Test fun `should open Pair extension function with free first key name contract`() {
     ("url" to "https://google.com").open {
       // ...
       close()
@@ -85,8 +93,10 @@
   }</programlisting>
 </para>
 </formalpara>
+<simpara><literal>Pair.open { &#8230;&#8203; }</literal></simpara>
+<simpara><emphasis role="strong">open absolute url (URL)</emphasis></simpara>
 <formalpara>
-<title>java: <literal>Selenide.open(URL absoluteUrl)</literal></title>
+<title><emphasis>java</emphasis></title>
 <para>
 <programlisting language="java" linenumbering="unnumbered">  @Test
   @DispayName("should open method with URL argument")
@@ -97,8 +107,9 @@
   }</programlisting>
 </para>
 </formalpara>
+<simpara><literal>open(URL absoluteUrl)</literal></simpara>
 <formalpara>
-<title>kotlin: <literal>URL.open { &#8230;&#8203; }</literal></title>
+<title><emphasis>kotlin</emphasis></title>
 <para>
 <programlisting language="kotlin" linenumbering="unnumbered">  @Test fun `should open URL extension function`() {
     URL("https://ya.ru").open {
@@ -108,8 +119,10 @@
   }</programlisting>
 </para>
 </formalpara>
+<simpara><literal>URL.open { &#8230;&#8203; }</literal></simpara>
+<simpara><emphasis role="strong">open by &#8230;&#8203;</emphasis></simpara>
 <formalpara>
-<title>java: <literal>Selenide.open(String relativeOrAbsoluteUrl, String domain, String login, String password)</literal></title>
+<title>java</title>
 <para>
 <programlisting language="java" linenumbering="unnumbered">  @Test
   @DispayName("should open using string arguments by some contract")
@@ -120,8 +133,9 @@
   }</programlisting>
 </para>
 </formalpara>
+<simpara><literal>open(String relativeOrAbsoluteUrl, String domain, String login, String password)</literal></simpara>
 <formalpara>
-<title>kotlin: <literal>Map&lt;String, String&gt;.open { &#8230;&#8203; }</literal></title>
+<title><emphasis>kotlin</emphasis></title>
 <para>
 <programlisting language="kotlin" linenumbering="unnumbered">  @Test fun `should open Map extension function minimal contract`() {
     mapOf("relativeOrAbsoluteUrl" to "https://google.com").open {
@@ -145,6 +159,7 @@
   }</programlisting>
 </para>
 </formalpara>
+<simpara><literal>Map&lt;String, String&gt;.open { &#8230;&#8203; }</literal></simpara>
 </chapter>
 <chapter xml:id="links">
 <title>Links</title>
@@ -168,6 +183,9 @@
 <simpara><link xl:href="https://daggerok.github.io/kotlenide">GitHub pages</link></simpara>
 </listitem>
 </itemizedlist>
-<simpara><link xl:href="./LICENSE">MIT</link></simpara>
+</chapter>
+<chapter xml:id="license">
+<title>License</title>
+<simpara><link xl:href="https://github.com/daggerok/kotlenide/blob/master/LICENSE">MIT</link></simpara>
 </chapter>
 </book>
