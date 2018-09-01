@@ -1,4 +1,4 @@
-= link:https://kotlinlang.org/[kotlin] + link:http://selenide.org/[selenide] = ❤️ kotlenide image:https://travis-ci.org/daggerok/kotlenide.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/kotlenide"]
+= link:https://kotlinlang.org/[kotlin] + link:http://selenide.org/[selenide] = kotlenide ❤️ image:https://travis-ci.org/daggerok/kotlenide.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/kotlenide"]
 
 Current status: in early development phase.
 Feedback, suggestions and any help are welcome!
@@ -15,7 +15,7 @@ Read link:https://daggerok.github.io/kotlenide[project reference documentation]
 === installation
 
 .gradle
-[source,groovy]
+[source,gradle]
 ----
 dependencies {
   compile 'com.github.daggerok:kotlenide:0.0.1'
@@ -74,5 +74,5 @@ class AwesomeKotlenideTests {
 
 == License
 //tag::license[]
-link:./LICENSE[MIT]
+link:https://github.com/daggerok/kotlenide/blob/master/LICENSE[MIT]
 //end::license[]
