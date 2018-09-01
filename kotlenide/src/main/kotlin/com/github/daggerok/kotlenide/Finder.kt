@@ -1,8 +1,9 @@
-@file:JvmName("Finder")
+//@file:JvmName("Finder")
 
 package com.github.daggerok.kotlenide
 
 import com.codeborne.selenide.Selenide.*
+import com.codeborne.selenide.SelenideElement
 import org.openqa.selenium.By
 import org.openqa.selenium.WebElement
 
@@ -17,4 +18,10 @@ class Finder {
   fun findAll(seleniumSelector: By)             = `$$`(seleniumSelector)
   fun findAll(cssSelector: String)              = `$$`(cssSelector)
   fun findAllX(xpathExpression: String)         = `$$x`(xpathExpression)
+
+  fun find(cssSelector: String, assertions: SelenideElement.() -> Unit): SelenideElement {
+    val el = find(cssSelector)
+    assertions.invoke(el)
+    return el
+  }
 }
