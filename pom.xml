@@ -12,6 +12,31 @@
   <artifactId>kotlenide-parent</artifactId>
   <packaging>pom</packaging>
 
+  <name>com.github.daggerok:kotlenide</name>
+  <description>Kotlin + Selenide = Kotlenide</description>
+  <url>https://github.com/daggerok/kotlenide</url>
+
+  <licenses>
+    <license>
+      <name>MIT</name>
+      <url>https://github.com/daggerok/kotlenide/blob/master/LICENSE</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <name>Maksim Kostromin</name>
+      <organization>daggerok</organization>
+      <organizationUrl>https://github.com/daggerok</organizationUrl>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:https://github.com/daggerok/kotlenide.git</connection>
+    <developerConnection>scm:git:https://github.com/daggerok/kotlenide.git</developerConnection>
+    <url>https://github.com/daggerok/kotlenide</url>
+  </scm>
+
   <modules>
     <module>kotlenide</module>
     <module>kotlenide-examples</module>
@@ -29,6 +54,7 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <assertj.version>3.10.0</assertj.version>
+    <assertk.version>0.12</assertk.version>
     <logback.version>1.2.3</logback.version>
     <lombok.version>1.18.2</lombok.version>
     <slf4j.version>1.7.25</slf4j.version>
@@ -37,15 +63,12 @@
   </properties>
 
   <dependencies>
-    <!-- In java we trust -->
-    <!--
+    <!-- In java we trust
     <dependency>
       <groupId>io.vavr</groupId>
       <artifactId>vavr</artifactId>
       <version>${vavr.version}</version>
     </dependency>
-    -->
-    <!--
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
@@ -53,6 +76,7 @@
       <optional>true</optional>
     </dependency>
     -->
+
     <!-- logging -->
     <dependency>
       <groupId>org.slf4j</groupId>
@@ -67,12 +91,12 @@
       <optional>true</optional>
       <scope>test</scope>
     </dependency>
-    <!-- Kotlin -->
-    <!--
+
+    <!-- Kotlin
     <dependency>
-      <groupId>com.fasterxml.jackson.module</groupId>
-      <artifactId>jackson-module-kotlin</artifactId>
-      <version>${jakson-kotlin.version}</version>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-reflect</artifactId>
+      <version>${kotlin.version}</version>
     </dependency>
     -->
     <dependency>
@@ -80,13 +104,6 @@
       <artifactId>kotlin-stdlib-jdk8</artifactId>
       <version>${kotlin.version}</version>
     </dependency>
-    <!--
-    <dependency>
-      <groupId>org.jetbrains.kotlin</groupId>
-      <artifactId>kotlin-reflect</artifactId>
-      <version>${kotlin.version}</version>
-    </dependency>
-    -->
 
     <!-- testing -->
     <dependency>
@@ -107,6 +124,12 @@
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
       <version>${assertj.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.willowtreeapps.assertk</groupId>
+      <artifactId>assertk-jvm</artifactId>
+      <version>${assertk.version}</version>
       <scope>test</scope>
     </dependency>
 
@@ -167,7 +190,6 @@
             <sourceDir>${project.basedir}/src/main/kotlin</sourceDir>
           </sourceDirs>
           <compilerPlugins>
-            <!--<plugin>spring</plugin>-->
             <plugin>all-open</plugin>
             <plugin>no-arg</plugin>
           </compilerPlugins>
@@ -212,17 +234,15 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.5.1</version><!--$NO-MVN-MAN-VER$ -->
+        <version>3.5.1</version>
         <executions>
-          <!-- Replacing default-compile as it is treated specially by maven -->
           <execution>
             <id>default-compile</id>
-            <phase>none</phase>
+            <phase>none</phase><!-- Replacing default-compile as it is treated specially by maven -->
           </execution>
-          <!-- Replacing default-testCompile as it is treated specially by maven -->
           <execution>
             <id>default-testCompile</id>
-            <phase>none</phase>
+            <phase>none</phase><!-- Replacing default-testCompile as it is treated specially by maven -->
           </execution>
           <execution>
             <id>java-compile</id>
@@ -240,36 +260,6 @@
           </execution>
         </executions>
       </plugin>
-
-      <!-- fat jar -->
-      <!--
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <version>3.1.0</version>
-        <configuration>
-          <finalName>${project.artifactId}-${project.version}-all</finalName>
-          <appendAssemblyId>false</appendAssemblyId>
-          <descriptorRefs>
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
-          <archive>
-            <manifest>
-              <mainClass>daggerok.AppKt</mainClass>
-            </manifest>
-          </archive>
-        </configuration>
-        <executions>
-          <execution>
-            <id>assemble-jar-with-dependencies</id>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      -->
 
       <!-- junit 5 -->
       <plugin>
@@ -351,7 +341,6 @@
             <executions>
               <execution>
                 <id>up</id>
-                <!--<phase>process-resources</phase>-->
                 <phase>verify</phase>
                 <goals>
                   <goal>up</goal>
@@ -359,7 +348,6 @@
               </execution>
               <execution>
                 <id>down</id>
-                <!--<phase>test</phase>-->
                 <phase>verify</phase>
                 <goals>
                   <goal>down</goal>
