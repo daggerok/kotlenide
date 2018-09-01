@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>kotlenide (0.0.1)</title>
-<date>2018-09-01 02:14:45 UTC</date>
+<date>2018-09-01 02:19:53 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2018-09-01 02:14:45 UTC</date>
+<date>2018-09-01 02:19:53 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -31,9 +31,6 @@
 <textobject><phrase>logo</phrase></textobject>
 </mediaobject>
 </informalfigure>
-</preface>
-<chapter xml:id="usage-todo">
-<title>Usage (TODO)</title>
 <formalpara>
 <title>At the moment, my goal is implement idiomatic kotlin DSL for UI ent-to-end testing, which under the hood is using famous good known <link xl:href="http://selenide.org/">selenide</link> functionality:</title>
 <para>
@@ -53,7 +50,7 @@
 }</programlisting>
 </para>
 </formalpara>
-</chapter>
+</preface>
 <chapter xml:id="how-to-work-in-progress">
 <title>How to (work in progress)</title>
 <formalpara>
@@ -148,11 +145,22 @@
   }</programlisting>
 </para>
 </formalpara>
-<simpara>TODO: implement documentation&#8230;&#8203;</simpara>
 </chapter>
 <chapter xml:id="links">
 <title>Links</title>
 <itemizedlist>
+<listitem>
+<simpara><link xl:href="https://kotlinlang.org/">Kotlin</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xl:href="https://kotlinlang.org/docs/reference/type-safe-builders.html">Kotlin DSL guide</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xl:href="http://selenide.org/">Selenide</link></simpara>
+</listitem>
+<listitem>
+<simpara><link xl:href="https://www141.lunapic.com/">Awesome free online images editor LunaPic</link></simpara>
+</listitem>
 <listitem>
 <simpara><link xl:href="https://github.com/daggerok/kotlenide">GitHub repo</link></simpara>
 </listitem>
@@ -160,5 +168,6 @@
 <simpara><link xl:href="https://daggerok.github.io/kotlenide">GitHub pages</link></simpara>
 </listitem>
 </itemizedlist>
+<simpara><link xl:href="./LICENSE">MIT</link></simpara>
 </chapter>
 </book>
