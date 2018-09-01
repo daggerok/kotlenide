@@ -32,12 +32,108 @@ BitBucket CI status:
 image:https://img.shields.io/bitbucket/pipelines/daggerok/{root-project-name}.svg["Build Status", link={bitbucket-url}]
 ////
 
-include::../README.adoc[tags=content]
+include::../README.adoc[tags=logo]
+include::../README.adoc[tags=installation]
+include::../README.adoc[tags=usage]
 
-TODO: implement documentation...
+== How to (work in progress)
+
+.java: `Selenide.open(String relativeOrAbsoluteUrl)`
+[source,java]
+----
+  @Test
+  @DispayName("should open method with String argument")
+  void test() {
+    open("https://google.com")
+    // ...
+    close()
+  }
+----
+
+.kotlin: `String.open { ... }`
+[source,kotlin]
+----
+  @Test fun `should open String extension function`() {
+    "https://google.com".open {
+      // ...
+      close()
+    }
+  }
+
+  // or:
+
+  @Test fun `should open Pair extension function with free first key name contract`() {
+    ("url" to "https://google.com").open {
+      // ...
+      close()
+    }
+  }
+----
+
+.java: `Selenide.open(URL absoluteUrl)`
+[source,java]
+----
+  @Test
+  @DispayName("should open method with URL argument")
+  void test() {
+    open(new URL("https://ya.ru"))
+    // ...
+    close()
+  }
+----
+
+.kotlin: `URL.open { ... }`
+[source,kotlin]
+----
+  @Test fun `should open URL extension function`() {
+    URL("https://ya.ru").open {
+      // ...
+      close()
+    }
+  }
+----
+
+.java: `Selenide.open(String relativeOrAbsoluteUrl, String domain, String login, String password)`
+[source,java]
+----
+  @Test
+  @DispayName("should open using string arguments by some contract")
+  void test() {
+    open("https://blog.example.com?q=java", "example.com", "login", "password")
+    // ...
+    close()
+  }
+----
+
+.kotlin: `Map<String, String>.open { ... }`
+[source,kotlin]
+----
+  @Test fun `should open Map extension function minimal contract`() {
+    mapOf("relativeOrAbsoluteUrl" to "https://google.com").open {
+      // ...
+      close()
+    }
+  }
+
+  // or:
+
+  @Test fun `should open Map extension function full contract`() {
+    mapOf(
+      "relativeOrAbsoluteUrl" to "https://blog.example.com?q=java",
+      "domain" to "example.com",
+      "login" to "login",
+      "password" to "password"
+    ).open {
+      // ...
+      close()
+    }
+  }
+----
 
 == Links
-
+include::../README.adoc[tags=links]
 ifdef::backend-html5[- link:./index.pdf[Documentation in PFD format]]
 - link:{github-url}[GitHub repo]
 - link:https://daggerok.github.io/{root-project-name}[GitHub pages]
+
+include::../README.adoc[tags=license]
