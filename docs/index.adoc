@@ -14,7 +14,6 @@ Maksim Kostromin <daggerok@gmail.com>
 :doctype: book
 :toc: left
 :toclevels: 4
-:numbered:
 :icons: font
 :hide-uri-scheme:
 :revnumber: {project-version}
@@ -33,12 +32,15 @@ image:https://img.shields.io/bitbucket/pipelines/daggerok/{root-project-name}.sv
 ////
 
 include::../README.adoc[tags=logo]
+
+== Introduction
 include::../README.adoc[tags=installation]
 include::../README.adoc[tags=usage]
 
 == How to (work in progress)
+**open url (String)**
 
-.java: `Selenide.open(String relativeOrAbsoluteUrl)`
+.__java__
 [source,java]
 ----
   @Test
@@ -50,7 +52,9 @@ include::../README.adoc[tags=usage]
   }
 ----
 
-.kotlin: `String.open { ... }`
+`open(String relativeOrAbsoluteUrl)`
+
+.__kotlin__
 [source,kotlin]
 ----
   @Test fun `should open String extension function`() {
@@ -59,9 +63,13 @@ include::../README.adoc[tags=usage]
       close()
     }
   }
+----
 
-  // or:
+`String.open { ... }`
 
+.__kotlin__
+[source,kotlin]
+----
   @Test fun `should open Pair extension function with free first key name contract`() {
     ("url" to "https://google.com").open {
       // ...
@@ -70,7 +78,11 @@ include::../README.adoc[tags=usage]
   }
 ----
 
-.java: `Selenide.open(URL absoluteUrl)`
+`Pair.open { ... }`
+
+**open absolute url (URL)**
+
+.__java__
 [source,java]
 ----
   @Test
@@ -82,7 +94,9 @@ include::../README.adoc[tags=usage]
   }
 ----
 
-.kotlin: `URL.open { ... }`
+`open(URL absoluteUrl)`
+
+.__kotlin__
 [source,kotlin]
 ----
   @Test fun `should open URL extension function`() {
@@ -93,7 +107,11 @@ include::../README.adoc[tags=usage]
   }
 ----
 
-.java: `Selenide.open(String relativeOrAbsoluteUrl, String domain, String login, String password)`
+`URL.open { ... }`
+
+**open by ...**
+
+.java
 [source,java]
 ----
   @Test
@@ -105,7 +123,9 @@ include::../README.adoc[tags=usage]
   }
 ----
 
-.kotlin: `Map<String, String>.open { ... }`
+`open(String relativeOrAbsoluteUrl, String domain, String login, String password)`
+
+.__kotlin__
 [source,kotlin]
 ----
   @Test fun `should open Map extension function minimal contract`() {
@@ -130,10 +150,13 @@ include::../README.adoc[tags=usage]
   }
 ----
 
+`Map<String, String>.open { ... }`
+
 == Links
 include::../README.adoc[tags=links]
 ifdef::backend-html5[- link:./index.pdf[Documentation in PFD format]]
 - link:{github-url}[GitHub repo]
 - link:https://daggerok.github.io/{root-project-name}[GitHub pages]
 
+== License
 include::../README.adoc[tags=license]
