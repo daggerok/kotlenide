@@ -60,7 +60,7 @@ script:
 
 - export root=$(pwd)
 
-- ./gradlew -Dbrowser=chrome -Drmeote=http://127.0.0.1:4444/wd/hub
+- ./gradlew -Dbrowser=chrome -Dremote=http://127.0.0.1:4444/wd/hub
 - ./mvnw -DargLine="-Dbrowser=firefox -Dremote=http://127.0.0.1:4444/wd/hub"
 
 before_deploy:

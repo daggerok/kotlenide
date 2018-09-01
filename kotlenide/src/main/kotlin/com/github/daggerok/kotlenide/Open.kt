@@ -10,24 +10,27 @@ import java.net.URL
  * com.codeborne.selenide.Selenide.open methods
  */
 
-fun String.open(init: Unit.() -> Unit = {}) {
+fun String.open(init: Finder.() -> Unit) {
   Selenide.open(this)
+  init.invoke(Finder())
 }
 
-fun URL.open(init: Unit.() -> Unit = {}) {
+fun URL.open(init: Finder.() -> Unit) {
   Selenide.open(this)
+  init.invoke(Finder())
 }
 
-fun Pair<Any, String?>.open(init: Unit.() -> Unit = {}) {
-  Selenide.open(this.second?: "")
+fun Pair<Any, String?>.open(init: Finder.() -> Unit) {
+  Selenide.open(this.second ?: "")
+  init.invoke(Finder())
 }
 
-
-fun Map<String, String?>.open(init: Unit.() -> Unit = {}) {
+fun Map<String, String?>.open(init: Finder.() -> Unit) {
   Selenide.open(
       this.toMutableMap()["relativeOrAbsoluteUrl"] ?: "",
       this.toMutableMap()["domain"] ?: "",
       this.toMutableMap()["login"] ?: "",
       this.toMutableMap()["password"] ?: ""
   )
+  init.invoke(Finder())
 }
