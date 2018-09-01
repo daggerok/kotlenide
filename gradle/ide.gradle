@@ -18,5 +18,5 @@ eclipse {
   }
 }
 
-//allprojects*.apply plugin: 'maven'
-//allprojects*.apply plugin: 'cn.bestwu.propdeps-maven'
+allprojects*.apply plugin: 'maven'
+allprojects*.apply plugin: 'cn.bestwu.propdeps-maven'
