@@ -16,7 +16,7 @@ rm -rf ~/.m2/repository/com/github/daggerok/kotlenide-examples
 [source,bash]
 ----
 docker-compose up --build
-./gradlew -Dbrowser=chrome -Drmeote=http://127.0.0.1:4444/wd/hub
+./gradlew -Dbrowser=chrome -Dremote=http://127.0.0.1:4444/wd/hub
 ./mvnw -DargLine="-Dbrowser=chrome -Dremote=http://127.0.0.1:4444/wd/hub"
 ----
 

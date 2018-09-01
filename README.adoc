@@ -44,8 +44,8 @@ image::./logo.png[]
 [source,kotlin]
 ----
 class AwesomeKotlenideTests {
-  @Test fun `selenide with idiomatic kotlin should be awesome`() {
-    open("http://127.0.0.1:8080") {
+  @Test fun `selenide using idiomatic kotlin should be awesome`() {
+    "http://127.0.0.1:8080".open {
       find("form") {
         it.find("input[type='text']") {
           it sendKeys "hola!"
@@ -146,7 +146,7 @@ class AwesomeKotlenideTests {
       "domain" to "example.com",
       "login" to "login",
       "password" to "password"
-    ) {
+    ).open {
       // ...
       close()
     }
