@@ -1,11 +1,17 @@
 dependencies {
-  compile "com.codeborne:selenide:$selenideVersion", {
+  compileOnly 'com.codeborne:selenide', {
     exclude module: 'selenium-opera-driver'
     exclude module: 'selenium-safari-driver'
     exclude module: 'selenium-edge-driver'
     exclude module: 'selenium-ie-driver'
     because "we don't wanna use any of these..."
   }
+  constraints {
+    implementation "com.codeborne:selenide:$selenideVersion", {
+      because 'we need selenide to be in class path during compile time'
+    }
+  }
+  testImplementation "com.codeborne:selenide:$selenideVersion"
 }
 
 apply from: "$project.rootDir/gradle/release.gradle"

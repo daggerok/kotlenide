@@ -5,6 +5,10 @@ env:
   global:
   - TERM=dumb
   - secure: ipYFOCI0QHzt30g+yZRAdiUfPT6J2dEL9vHacw83SNFVXEqgDYMkjcZpF+dRI27KrFUgzEbJ8dF8bEL/DE8Hd58O4ndJrbe/YRVcC0hgMe5ApSDYRDobaJXvVDADS0WRoHN0TuZ8pEZqn/44ym5b8X9mAqVOCIqbLYWtswYgonhPHC5XBiIf7SvHdLshwyQIbKdRybcDAZAVD7nWNMosaHZWeSvfQKS0t4ykR4pfa95H2hIEtT0lYyxTjefEn7ZmojCs7FvtEt9SJSPwQ/RPq7TM+pmqykVYuTru8LB8p2TZjWEg9dfW0ZlduhWL67bRFLxg0FeqiOo09QwgXC75bQ/cSDcRSZRPQyWB4M3k6AyNNQ1snqqFYnF0Pma9aDQB2VHOGywT+eXeoTxH8DG1TI7AxXhrG9KPE2p9Ejflg285wWzj8Bi+RDaQ7k0J+Zi/Srk476dgYoVGuyuuD1zU2bhXsdUrKBSSbUWstys4p/MzXn5vxLpVO1/yqQ3L8rR/p4ymA/6LL2Es0qFXnvBCvkgaU+m2NG9oDghMv0ifss7DQ+wy5zCz0qHZyW5VooRAzDt5ak/ZqdkhC6fm8GpMcJddscq/psbb5UDPXjcRKY5dNqSGhTMVJlN4pxbxIGdBed+unOrcqSfWZNtfx5tzrFTRPhY7FLYi2/JeUNvnJiM=
+  - secure: g3mK5zUZ1oI7zGWcT06E+Sde+flRbcLCmEnJSfqDMuyM3UFXoyWshzddtkxu+sFH7niPnmgBKqyN62eJGMSiO0H1DoklK1EXRqiKS2TfT5OyZuN6Q6bbXai8Yzszl9R71MZQQbb8A5lkVTWSLWNeAbTd6DNKTKEkKCN6BvzgKvmp6IPZnt2aQx5MlBUw6Bgzklf7br836lcNzi2S8q5zU1tXWbwApNb5UFK+ckj1tZd1dIVOgxB7NiYMaoy+5DUc6+JR6uacus3LNtIrg5rqx3eJVPC38XT0mW/QOrtVQOTge5RYihG+4RGvrRURzy49gX7DPqwSanKAnvfs5o/X9+N3Dz0zi1fG1N9BU9gmtp0CBmY6gJICfmYJpxJu1YAcmuas04Ks18hZPtWNYMqiiSxG7LqlQJUmH49OYtGRvt+S6vTnv9S4C0K9uRi8D1RAJms0x3RVEOcrPZEqjd+VBKB+awtrnuEzglcPrd3E/mRE7+t6RDqOP4TWCOVovJAB7s72Flbr79ACVchU8WJvMN/aPkiUMPpUdJ/UhmMCan3SmCRCTFyeopTmrtpC7vac8y99rTXZxkCSDY5GMSfsqKNoO5OhOouVj9LZkQT0sAJD6XhkLJlQ/PM0o72g6fJ1t2zjIYuLgi+ZaxY6+ghdBfB6wZu//jVBahrVATk0O08=
+  - secure: EqAmNP3ga6eal4zpYqFmxe6vZ4dUcEKlKiqDxHQJSfrk24C4HKMPxgYc9ERCCGVPEsI7csFHfHgUtGKPYR6vz9yf/XNl2i8QpnYG0d2sqgVSJg2Aft8XFB9Z7M3WfRqOtZgSMtYIG4fUDROuwm8cSfwuZ/VZfsAYDAV/23dFJmwzBAtb5/8/+X4Cu/dRobFklJ29dX5yJ309SqHGbLuMkNmW8B/Kh6xLYNx8U+c4xqlK0EVpcomfF7uSFVYyzc9bKjQMpA/RAvDpsEuT+GeJ2DnT9+TArxP26VaeM/y5eR8Ma9YcVFSxzi/hVyGa9IQnXHcBUyaKyhh8dGVJJJdgwCWr/GIdgCknnigVNFcxuySeWbwEZYaS50MEkAO+0s0bBhnJjxLMIxqYyf6a/eHwYGCFwBFq0oxH56Fa/3+1n57K7f/RU3JfhmADZwRRF860Ch6U1UzwBpfFH5qbggz5uS42u7EgTiENqMuhDLuXUP3xD9JLfQ4bl3pZrwZoGva6e4Rf/7XNiGW/IzY1esR6rVyplDcfOo3vL57omqXfhIHFY0JIKJ6W4fC6kzkETDgeJXURmd8f6n2hWl/Zdr4aJPDvK+Y735ybO0tao4qbk/+lnSk8DzgqZ9olbS1Ft+/dciPAUFuHj9DbtA0C6LZ1Qnix00NZXj3FoAr7SqUaaPM=
+  - secure: AIfqrBRAhpR1crts2PbKhfof8uTKaoBU9zhLPPtEcvlzC4Pd1p5ObbEpI5G1dlQtvT6ynrdwegk5sJYsoV+o88XEmIrbmlX5xz7/GcnTi8GmCLABZHc1aaPok1sV7Y/Zx0/xazVeDbL20OoSpRn6g4IvgAqkE7BZ/tTndozqVPeQbeeivXzztSh+SsObjGDXBzdVOWQBd/1Cj05AssECiSaJNcldkNKpGReRTyHYMBCQMUcpSL5c97759zsOiQsnBmmT2Ayiagtfl/QYWmkeJFnAIg751Rr21uQ2Yex6b46E/kuWD1qD8Z0LZihEXOp0s9zOODyYGq6QGnv5FHEdkmEf4kG7SLt7J0bBUPgEps55gFEAPLGrnuXI/a1cD+k+7OofAnG3R5dDevVCC6dbpi4xQ+ckCBkgsqZxPY/w4T2VfsFklgvmfJ7ap0N2+oDCOGT+uG33MwE1q2ZFGJyNjK2RFthfhWV0swOazX/Dv3T3+7oJBPHk6vMCKQ91HVOp8QgS1IHymqSFMrU4aozQY8z5iIFlwuvaC51pOL9SmQ/R+ruMu4MbH4ZRIT1egRkCLO18AtxHkN2WkwwAIJ/9ICJicxhSNMMunmhU7IotvQ5nkLWNpZzRjMO0xiyAe/pY4zuBLwWDPWNUeGW0MvExSAgwiKACX0ucTULEsCAAx8Y=
+  - secure: Lfjdp8t3UzuERXuBjl56qIO94T8YPiJvLsOBx3P1dw2xLKXOewMdsEUw1OPf/xa1muZWTGroXkfGrHfglRItVQyTBeFBv1XcXoBasZhKdSnVcNDt0nfnZhu/YZniHsrckG3xa35Xit4arqw7ZH0dxX7HKGcXejuIZEkgqvLcLlm9pguYiM3/sa1UNoCW3hOlmrlWmDkPa+s91aj5YPu9WhVohUm84YwDA87hz2igpK82JHQqf1sZqqr5og0KzOa3+c596WaE+FDLI5L83aNcFbt3YTMqPk0IJPK0APEHg/YNxg2pdGiKjeazfEynLmEvzotr9lTcxl6fm9N2T8uEhB2qBDYUEb6xRJ+q2yfY6It28AwoejGDE5HDY7wa/AnPDHDr7EJ4tBQMuzbrtccCMNT4UQCO5QJeDx90ajEBUzdImaeJNYGr73/vx/j1ePZ3L7/F+QN1lJpFVtK3JK60R49hugvSJNToWcmsnrMBTYWiRgW7H5qRXAnUA/b91F/dIaoDrrlyL7PQN9qs6hNRRpmbd9kRKqqJKLXkIYMNOuw5MR64sfb6W3KQUr+ETjdZqUu0aEAMZ4d6XzJqPtYVzCX51XewUUmPGpaWXremZt5yjW9argWMfK8i94YNYjb2ubdvV9I52a6PHiEWciyEZrl1FvyaMLL9tjMjBbJo9Bc=
 
 language: java
 jdk:
@@ -21,20 +25,19 @@ addons:
     - google-chrome
     packages:
     - google-chrome-stable
-    - google-chrome-stable
     - libappindicator1
     - fonts-liberation
+    - docker-ce
     - bash
     - curl
     - libxml2-utils
-    - docker-ce
 
 install: true
 before_install:
-- export CHROME_BIN=/usr/bin/google-chrome
-- export DISPLAY=:99.0
-- sh -e /etc/init.d/xvfb start
-#
+#- export CHROME_BIN=/usr/bin/google-chrome
+#- export DISPLAY=:99.0
+#- sh -e /etc/init.d/xvfb start
+##
 - sudo add-apt-repository universe -y >/dev/null
 - echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list >/dev/null
 - sudo apt-get update -yqq >/dev/null
@@ -66,8 +69,8 @@ script:
 before_deploy:
 - cd ${root}
 #
-- ./mvnw
-- ./gradlew
+- ./mvnw -DskipTests >/dev/null
+- ./gradlew -x test >/dev/null
 #deploy release artifacts to bintray jcenter and maven central repositories:
 - chmod 0600 .gnupg/gpg.conf
 #
@@ -75,8 +78,9 @@ before_deploy:
 - test ".${TRAVIS_BRANCH}" != ".release" || mkdir -p ~/.gradle
 - test ".${TRAVIS_BRANCH}" != ".release" || echo 'bintrayUser=daggerok'           >> ~/.gradle/gradle.properties
 - test ".${TRAVIS_BRANCH}" != ".release" || echo "bintrayApiKey=$BINTRAY_API_KEY" >> ~/.gradle/gradle.properties
-- test ".${TRAVIS_BRANCH}" != ".release" || ./gradlew clean assemble
-- test ".${TRAVIS_BRANCH}" != ".release" || ./gradlew -S bintrayUpload
+- test ".${TRAVIS_BRANCH}" != ".release" || ./gradlew clean assemble >/dev/null
+- test ".${TRAVIS_BRANCH}" != ".release" || ./gradlew -S :kotlenide:bintrayUpload -m
+- test ".${TRAVIS_BRANCH}" != ".release" || ./gradlew -S :kotlenide:bintrayUpload # -x text
 #
 - test ".${TRAVIS_BRANCH}" != ".release" || echo "deploy drafted release to maven central"
 - |
@@ -87,12 +91,13 @@ before_deploy:
     echo "signing.keyId=$SIGNING_KEY_ID"                        >> ~/.gradle/gradle.properties
     echo "signing.password=$SIGNING_PASSWORD"                   >> ~/.gradle/gradle.properties
     echo "signing.secretKeyRingFile=$(pwd)/.gnupg/secring.gpg"  >> ~/.gradle/gradle.properties
-    ./gradlew clean assemble
-    ./gradlew -Si uploadArchives -Pmaven-central
+    ./gradlew clean assemble >/dev/null
+    ./gradlew -Si :kotlenide:uploadArchives -Pmaven-central -m
+    ./gradlew -Si :kotlenide:uploadArchives -Pmaven-central # -x test
   fi
 #
 - ./gradlew clean
-- ./mvnw -Pdocs >/dev/null
+- ./mvnw -Pdocs process-resources >/dev/null
 - mkdir -p ./target/generated-docs
 - cp -Rf ./target/generated-docs/index.html ./target/generated-docs/404.html
 

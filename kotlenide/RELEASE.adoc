@@ -13,7 +13,7 @@ echo 'bintrayApiKey=Bintray.api.key...' >> ~/.gradle/gradle.properties
 
 .publish artifact to bintray jcenter
 ----
-./gradlew -S clean bintrayUpload
+./gradlew -S clean :kotlenide:bintrayUpload
 ----
 ////
 
@@ -40,8 +40,8 @@ echo 'signing.secretKeyRingFile=/Users/mak/.gnupg/secring.gpg' >> ~/.gradle/grad
 .publish artifact to bintray jcenter
 ----
 ./gradlew clean assemble
-#./gradlew -Si uploadArchives
-./gradlew -Si uploadArchives -Pmaven-central
+#./gradlew -Si :kotlenide:uploadArchives
+./gradlew -Si :kotlenide:uploadArchives -Pmaven-central
 ----
 ////
 

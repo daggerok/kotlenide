@@ -18,12 +18,5 @@ allprojects {
         project.file('allure-results'),
         project.file("$rootDir/src/main/resources/public/docs"),
     ].each { delete it }
-    // rm -rf $(find . -name 'ajcore.*.txt')
-    delete fileTree(rootDir).matching {
-      include '**/ajcore.*.txt'
-      include '**/allure-results/**'
-      include '**/allure-report/**'
-      include '**/.allure/**'
-    }
   }
 }

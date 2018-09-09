@@ -63,9 +63,29 @@ include::../README.adoc[tags=usage]
       close()
     }
   }
+
+  @Test fun `in addition can open given URL in given browser`() {
+    "https://google.com".open("firefox") {
+      // ...
+      close()
+    }
+  }
+
+  @Test fun `semantically has openIn function also to open given URL in given browser`() {
+    "https://google.com".openIn("chrome") {
+      // ...
+      close()
+    }
+  }
 ----
 
-`String.open { ... }`
+API:
+
+- `String.open { ... }`
+- `String.open("browserName") { ... }`
+- `String.open(browser = "...") { ... }`
+- `String.openIn("browserName") { ... }`
+- `String.openIn(browser = "...") { ... }`
 
 .__kotlin__
 [source,kotlin]

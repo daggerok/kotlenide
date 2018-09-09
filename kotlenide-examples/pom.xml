@@ -18,6 +18,13 @@
 
   <dependencies>
     <dependency>
+      <groupId>com.codeborne</groupId>
+      <artifactId>selenide</artifactId>
+      <version>${selenide.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
       <groupId>com.github.daggerok</groupId>
       <artifactId>kotlenide</artifactId>
       <version>0.0.1</version>

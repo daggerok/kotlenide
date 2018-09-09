@@ -74,7 +74,7 @@ dependencies {
   </dependency>
 </dependencies>
 ```
-
+<!--
 ### jitpack gradle
 
 **build.gradle**
@@ -109,3 +109,4 @@ dependencies {
   </dependency>
 </dependencies>
 ```
+-->

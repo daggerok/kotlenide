@@ -1,4 +1,19 @@
+allprojects {
+  buildscript {
+    apply from: "$project.projectDir/../gradle/repositories-config.gradle"
+  }
+  apply from: "$project.projectDir/../gradle/repositories-config.gradle"
+}
+
+buildscript {
+  ext {
+    selenideVersion = '4.14.0'
+  }
+}
+
 dependencies {
+  testImplementation "com.codeborne:selenide:$selenideVersion"
   //testImplementation 'com.github.daggerok:kotlenide:0.0.1'
-  testImplementation(project(":kotlenide"))
+  testImplementation project(":kotlenide")
+  testRuntimeOnly "ch.qos.logback:logback-classic:$logbackVersion"
 }
