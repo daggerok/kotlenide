@@ -1,9 +1,14 @@
 allprojects {
   apply plugin: 'java'
 
-  version = '0.0.2'
+  version = '0.0.1'
   group = 'com.github.daggerok'
+  description = 'Kotlin + Selenide is: ❤️ Kotlenide!'
   sourceCompatibility = targetCompatibility = "$javaVersion"
+
+  compileJava {
+    options.compilerArgs += ['-Xlint:unchecked']
+  }
 
   defaultTasks 'clean', 'build'
 

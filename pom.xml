@@ -8,34 +8,16 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.github.daggerok</groupId>
-  <version>0.0.2</version>
+  <version>0.0.1</version>
   <artifactId>kotlenide-parent</artifactId>
   <packaging>pom</packaging>
 
-  <name>com.github.daggerok:kotlenide</name>
-  <description>Kotlin + Selenide = Kotlenide</description>
-  <url>https://github.com/daggerok/kotlenide</url>
-
-  <licenses>
-    <license>
-      <name>MIT</name>
-      <url>https://github.com/daggerok/kotlenide/blob/master/LICENSE</url>
-    </license>
-  </licenses>
-
-  <developers>
-    <developer>
-      <name>Maksim Kostromin</name>
-      <organization>daggerok</organization>
-      <organizationUrl>https://github.com/daggerok</organizationUrl>
-    </developer>
-  </developers>
-
-  <scm>
-    <connection>scm:git:https://github.com/daggerok/kotlenide.git</connection>
-    <developerConnection>scm:git:https://github.com/daggerok/kotlenide.git</developerConnection>
-    <url>https://github.com/daggerok/kotlenide</url>
-  </scm>
+  <distributionManagement>
+    <repository>
+      <id>local-repo</id>
+      <url>file://${project.basedir}/target/local-repo</url>
+    </repository>
+  </distributionManagement>
 
   <modules>
     <module>kotlenide</module>
@@ -320,14 +302,6 @@
       </plugin>
     </plugins>
   </reporting>
-
-  <!-- mvn deploy -->
-  <distributionManagement>
-    <repository>
-      <id>local-repo</id>
-      <url>file://${project.basedir}/target/local-repo</url>
-    </repository>
-  </distributionManagement>
 
   <profiles>
     <profile>

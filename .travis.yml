@@ -65,6 +65,32 @@ script:
 
 before_deploy:
 - cd ${root}
+#
+- ./mvnw
+- ./gradlew
+#deploy release artifacts to bintray jcenter and maven central repositories:
+- chmod 0600 .gnupg/gpg.conf
+#
+- test ".${TRAVIS_BRANCH}" != ".release" || echo "deploy drafted release to bintray jcenter"
+- test ".${TRAVIS_BRANCH}" != ".release" || mkdir -p ~/.gradle
+- test ".${TRAVIS_BRANCH}" != ".release" || echo 'bintrayUser=daggerok'           >> ~/.gradle/gradle.properties
+- test ".${TRAVIS_BRANCH}" != ".release" || echo "bintrayApiKey=$BINTRAY_API_KEY" >> ~/.gradle/gradle.properties
+- test ".${TRAVIS_BRANCH}" != ".release" || ./gradlew clean assemble
+- test ".${TRAVIS_BRANCH}" != ".release" || ./gradlew -S bintrayUpload
+#
+- test ".${TRAVIS_BRANCH}" != ".release" || echo "deploy drafted release to maven central"
+- |
+  if [ ".${TRAVIS_BRANCH}" = ".release" ]; then
+    mkdir -p ~/.gradle
+    echo 'ossrhUsername=daggerok'                               >> ~/.gradle/gradle.properties
+    echo "ossrhPassword=$OSSRH_PASSWORD"                        >> ~/.gradle/gradle.properties
+    echo "signing.keyId=$SIGNING_KEY_ID"                        >> ~/.gradle/gradle.properties
+    echo "signing.password=$SIGNING_PASSWORD"                   >> ~/.gradle/gradle.properties
+    echo "signing.secretKeyRingFile=$(pwd)/.gnupg/secring.gpg"  >> ~/.gradle/gradle.properties
+    ./gradlew clean assemble
+    ./gradlew -Si uploadArchives -Pmaven-central
+  fi
+#
 - ./gradlew clean
 - ./mvnw -Pdocs >/dev/null
 - mkdir -p ./target/generated-docs

@@ -7,3 +7,5 @@ dependencies {
     because "we don't wanna use any of these..."
   }
 }
+
+apply from: "$project.rootDir/gradle/release.gradle"

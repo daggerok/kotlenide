@@ -1,0 +1,162 @@
+def getPropOrSystemOrDefault(def propertyName, def systemPropertyName) {
+  def defaultValue = System.getenv("$systemPropertyName") ?: 'not-present'
+  return project.hasProperty("$propertyName") ? project.property("$propertyName") : defaultValue
+}
+
+
+//apply from: "$project.projectDir/gradle/release/maven-publish.gradle"
+
+apply plugin: 'maven-publish'
+
+javadoc.failOnError = false
+
+task javadocJar(type: Jar) {
+  classifier = 'javadoc'
+  from javadoc
+}
+
+task classifierJar(type: Jar) {
+  from sourceSets.main.output
+}
+
+task sourceJar(type: Jar) {
+  from sourceSets.main.allJava
+}
+
+task classifierSourceJar(type: Jar) {
+  from sourceSets.main.allJava
+}
+
+def pomConfig = {
+  scm {
+    url project.vcsUrl
+  }
+  developers {
+    developer {
+      id 'daggerok'
+      name 'Maksim Kostromin'
+      email 'daggerok@gmail.com'
+    }
+  }
+  licenses {
+    license {
+      name 'MIT License'
+      url 'http://www.opensource.org/licenses/mit-license.php'
+      distribution 'repo'
+    }
+  }
+}
+
+publishing {
+  publications {
+    publication(MavenPublication) {
+      from components.java
+      artifact javadocJar {
+        classifier = 'javadoc'
+      }
+      artifact classifierJar {
+        classifier = 'kotlin'
+      }
+      artifact sourceJar {
+        classifier = 'sources'
+      }
+      artifact classifierSourceJar {
+        classifier = 'kotlin-sources'
+      }
+      pom.withXml {
+        def root = asNode()
+        root.appendNode('description', project.description)
+        root.appendNode('name', project.name)
+        root.appendNode('url', project.vcsUrl)
+        root.children().last() + pomConfig
+      }
+    }
+  }
+  repositories {
+    maven {
+      url "$buildDir/maven-publish"
+    }
+  }
+}
+
+artifacts {
+  archives javadocJar, classifierJar, sourceJar, classifierSourceJar
+}
+
+
+//apply from: "$project.projectDir/gradle/release/bintray.gradle"
+
+apply plugin: 'com.jfrog.bintray'
+
+bintray {
+  user = getPropOrSystemOrDefault('bintrayUser', 'BINTRAY_USER')
+  key = getPropOrSystemOrDefault('bintrayApiKey', 'BINTRAY_API_KEY')
+  publications = ['publication']
+  pkg {
+    userOrg = user
+    repo = 'daggerok'
+    name = project.name
+    licenses = ['MIT']
+    vcsUrl = project.vcsUrl
+    labels = [
+        'Kotlin',
+        'Selenide',
+        'Kotlenide',
+        'Kotlin-Selenide',
+        'Selenide-Kotlin',
+    ]
+    publicDownloadNumbers = true
+  }
+}
+
+
+if (project.hasProperty('maven-central')) {
+  //apply from: "$project.projectDir/gradle/release/maven-central.gradle"
+  apply plugin: 'signing'
+
+  signing {
+    sign configurations.archives
+  }
+
+  def ossrhUsername = getPropOrSystemOrDefault('ossrhUsername', 'ossrhUsername')
+  def ossrhPassword = getPropOrSystemOrDefault('ossrhPassword', 'ossrhPassword')
+
+  uploadArchives {
+    repositories {
+      mavenDeployer {
+        beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+        repository(url: 'https://oss.sonatype.org/service/local/staging/deploy/maven2/') {
+          authentication(userName: ossrhUsername, password: ossrhPassword)
+        }
+        snapshotRepository(url: 'https://oss.sonatype.org/content/repositories/snapshots/') {
+          authentication(userName: ossrhUsername, password: ossrhPassword)
+        }
+        pom.project {
+          name project.name
+          packaging 'jar'
+          // optionally artifactId can be defined here
+          description project.description
+          url 'https://github.com/daggerok/kotlenide'
+          scm {
+            connection 'scm:git:git://github.com/daggerok/kotlenide.git'
+            developerConnection 'scm:git:ssh://github.com:daggerok/kotlenide.git'
+            url 'https://github.com/daggerok/kotlenide/tree/master'
+          }
+          licenses {
+            license {
+              name 'MIT License'
+              url 'http://www.opensource.org/licenses/mit-license.php'
+            }
+          }
+          developers {
+            developer {
+              id 'daggerok'
+              name 'Maksim Kostromin'
+              email 'daggerok@gmail.com'
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -13,6 +13,8 @@ buildscript {
     assertkVersion = '0.12'
     hamcrestVersion = '1.3'
     junit4Version = '4.12'
+
+    vcsUrl = 'https://github.com/daggerok/kotlenide.git'
   }
 
   dependencies {
@@ -35,6 +37,8 @@ plugins {
   id 'cn.bestwu.propdeps-maven' version '0.0.10' apply false
   id 'cn.bestwu.propdeps-idea' version '0.0.10' apply false
   id 'cn.bestwu.propdeps' version '0.0.10' apply false
+
+  id 'com.jfrog.bintray' version '1.8.4' apply false
 }
 
 wrapper {

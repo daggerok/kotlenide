@@ -1,4 +1,4 @@
 dependencies {
-  //testImplementation 'com.github.daggerok:kotlenide:0.0.2'
+  //testImplementation 'com.github.daggerok:kotlenide:0.0.1'
   testImplementation(project(":kotlenide"))
 }

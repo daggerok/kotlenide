@@ -18,7 +18,7 @@ Read link:https://daggerok.github.io/kotlenide[project reference documentation]
 [source,gradle]
 ----
 dependencies {
-  compile 'com.github.daggerok:kotlenide:0.0.2'
+  compile 'com.github.daggerok:kotlenide:0.0.1'
 }
 ----
 
@@ -28,7 +28,7 @@ dependencies {
   <dependency>
     <groupId>org.projectlombok</groupId>
     <artifactId>lombok</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.1</version>
     <optional>true</optional>
   </dependency>
 ----
@@ -69,8 +69,17 @@ class AwesomeKotlenideTests {
   @Test fun `selenide using idiomatic kotlin should be awesome`() {
     "https://google.com".open {
       find("body") {
-        this contains "Gmail"
+        this contains "mail"
         this has "G"
+        close()
+      }
+    }
+  }
+
+  @Test fun `should open given URL in chrome using String extension function and assert by text condition`() {
+    "https://google.com".openIn("chrome") {
+      find("body") {
+        this shouldHaveText "Gmail"
         close()
       }
     }
