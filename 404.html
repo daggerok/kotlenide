@@ -463,7 +463,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span id="author" class="author">Maksim Kostromin</span><br>
 <span id="email" class="email"><a href="mailto:daggerok@gmail.com">daggerok@gmail.com</a></span><br>
 <span id="revnumber">version 0.0.1,</span>
-<span id="revdate">2018-09-10 02:16:06 UTC</span>
+<span id="revdate">2018-09-10 02:22:49 UTC</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -593,11 +593,44 @@ Otherwise&#8201;&#8212;&#8201;just add some together with kotlenide&#8230;&#8203
       // ...
       close()
     }
+  }
+
+  @Test fun `in addition can open given URL in given browser`() {
+    "https://google.com".open("firefox") {
+      // ...
+      close()
+    }
+  }
+
+  @Test fun `semantically has openIn function also to open given URL in given browser`() {
+    "https://google.com".openIn("chrome") {
+      // ...
+      close()
+    }
   }</code></pre>
 </div>
 </div>
 <div class="paragraph">
+<p>API:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
 <p><code>String.open { &#8230;&#8203; }</code></p>
+</li>
+<li>
+<p><code>String.open("browserName") { &#8230;&#8203; }</code></p>
+</li>
+<li>
+<p><code>String.open(browser = "&#8230;&#8203;") { &#8230;&#8203; }</code></p>
+</li>
+<li>
+<p><code>String.openIn("browserName") { &#8230;&#8203; }</code></p>
+</li>
+<li>
+<p><code>String.openIn(browser = "&#8230;&#8203;") { &#8230;&#8203; }</code></p>
+</li>
+</ul>
 </div>
 <div class="listingblock">
 <div class="title"><em>kotlin</em></div>
@@ -738,7 +771,7 @@ Otherwise&#8201;&#8212;&#8201;just add some together with kotlenide&#8230;&#8203
 <div id="footer">
 <div id="footer-text">
 Version 0.0.1<br>
-Last updated 2018-09-10 02:16:06 UTC
+Last updated 2018-09-10 02:22:49 UTC
 </div>
 </div>
 <!-- jquery -->

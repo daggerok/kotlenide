@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>kotlenide (0.0.1)</title>
-<date>2018-09-10 02:16:06 UTC</date>
+<date>2018-09-10 02:22:49 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2018-09-10 02:16:06 UTC</date>
+<date>2018-09-10 02:22:49 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -122,10 +122,41 @@ Otherwise&#8201;&#8212;&#8201;just add some together with kotlenide&#8230;&#8203
       // ...
       close()
     }
+  }
+
+  @Test fun `in addition can open given URL in given browser`() {
+    "https://google.com".open("firefox") {
+      // ...
+      close()
+    }
+  }
+
+  @Test fun `semantically has openIn function also to open given URL in given browser`() {
+    "https://google.com".openIn("chrome") {
+      // ...
+      close()
+    }
   }</programlisting>
 </para>
 </formalpara>
+<simpara>API:</simpara>
+<itemizedlist>
+<listitem>
 <simpara><literal>String.open { &#8230;&#8203; }</literal></simpara>
+</listitem>
+<listitem>
+<simpara><literal>String.open("browserName") { &#8230;&#8203; }</literal></simpara>
+</listitem>
+<listitem>
+<simpara><literal>String.open(browser = "&#8230;&#8203;") { &#8230;&#8203; }</literal></simpara>
+</listitem>
+<listitem>
+<simpara><literal>String.openIn("browserName") { &#8230;&#8203; }</literal></simpara>
+</listitem>
+<listitem>
+<simpara><literal>String.openIn(browser = "&#8230;&#8203;") { &#8230;&#8203; }</literal></simpara>
+</listitem>
+</itemizedlist>
 <formalpara>
 <title><emphasis>kotlin</emphasis></title>
 <para>
