@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>kotlenide (0.0.1)</title>
-<date>2018-09-10 02:24:33 UTC</date>
+<date>2018-09-10 02:27:52 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2018-09-10 02:24:33 UTC</date>
+<date>2018-09-10 02:27:52 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -45,7 +45,7 @@ Otherwise&#8201;&#8212;&#8201;just add some together with kotlenide&#8230;&#8203
 <para>
 <programlisting language="gradle" linenumbering="unnumbered">dependencies {
   testImplementation 'com.github.daggerok:kotlenide:0.0.1'
-  // Kotlenide requires Selenide dependency
+  // Kotlenide also requires Selenide dependency:
   testImplementation 'com.codeborne:selenide:4.14.0'
 }</programlisting>
 </para>
@@ -53,21 +53,23 @@ Otherwise&#8201;&#8212;&#8201;just add some together with kotlenide&#8230;&#8203
 <formalpara>
 <title>maven</title>
 <para>
-<programlisting language="xml" linenumbering="unnumbered">  &lt;dependencies&gt;
+<programlisting language="xml" linenumbering="unnumbered">&lt;project&gt;
+  &lt;dependencies&gt;
     &lt;dependency&gt;
       &lt;groupId&gt;com.github.daggerok&lt;/groupId&gt;
       &lt;artifactId&gt;kotlenide&lt;/artifactId&gt;
       &lt;version&gt;0.0.1&lt;/version&gt;
       &lt;scope&gt;test&lt;/scope&gt;
     &lt;/dependency&gt;
-    &lt;!-- Kotlenide requires Selenide dependency --&gt;
+    &lt;!-- Kotlenide also requires Selenide dependency: --&gt;
     &lt;dependency&gt;
       &lt;groupId&gt;com.codeborne&lt;/groupId&gt;
       &lt;artifactId&gt;selenide&lt;/artifactId&gt;
       &lt;version&gt;4.14.0&lt;/version&gt;
       &lt;scope&gt;test&lt;/scope&gt;
     &lt;/dependency&gt;
-  &lt;/dependencies&gt;</programlisting>
+  &lt;/dependencies&gt;
+&lt;/project&gt;</programlisting>
 </para>
 </formalpara>
 <formalpara>
