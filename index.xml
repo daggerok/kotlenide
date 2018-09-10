@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>kotlenide (0.0.1)</title>
-<date>2018-09-10 02:27:52 UTC</date>
+<date>2018-09-10 02:31:07 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2018-09-10 02:27:52 UTC</date>
+<date>2018-09-10 02:31:07 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -75,7 +75,7 @@ Otherwise&#8201;&#8212;&#8201;just add some together with kotlenide&#8230;&#8203
 <formalpara>
 <title>idiomatic kotlin DSL for UI ent-to-end testing, which is using famous good known <link xl:href="http://selenide.org/">selenide</link> under the hood:</title>
 <para>
-<programlisting language="kotlin" linenumbering="unnumbered">class AwesomeKotlenideTests {
+<programlisting language="kotlin" linenumbering="unnumbered">class `Awesome Kotlenide Tests` {
   @Test fun `selenide using idiomatic kotlin should be awesome`() {
     "https://google.com".open {
       find("body") {
