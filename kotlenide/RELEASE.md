@@ -21,21 +21,23 @@ dependencies {
 **pom.xml**
 
 ```xml
-<dependencies>
-  <dependency>
-    <groupId>com.github.daggerok</groupId>
-    <artifactId>kotlenide</artifactId>
-    <version>0.0.1</version>
-  </dependency>
-</dependencies>
-
-<!-- only for bintray jcenter repository use cases -->
-<repositories>
-  <repository>
-    <id>jcentral</id>
-    <url>https://jcenter.bintray.com</url>
-  </repository>
-</repositories>
+<project>
+  <dependencies>
+    <dependency>
+      <groupId>com.github.daggerok</groupId>
+      <artifactId>kotlenide</artifactId>
+      <version>0.0.1</version>
+    </dependency>
+  </dependencies>
+  
+  <!-- only for bintray jcenter repository use cases -->
+  <repositories>
+    <repository>
+      <id>jcentral</id>
+      <url>https://jcenter.bintray.com</url>
+    </repository>
+  </repositories>
+</project>
 ```
 
 ## other options
@@ -59,20 +61,22 @@ dependencies {
 **pom.xml**
 
 ```xml
-<repositories>
-  <repository>
-    <id>bintray-daggerok</id>
-    <url>https://dl.bintray.com/daggerok/daggerok</url>
-  </repository>
-</repositories>
-
-<dependencies>
-  <dependency>
-    <groupId>com.github.daggerok</groupId>
-    <artifactId>kotlenide</artifactId>
-    <version>0.0.1</version>
-  </dependency>
-</dependencies>
+<project>
+  <repositories>
+    <repository>
+      <id>bintray-daggerok</id>
+      <url>https://dl.bintray.com/daggerok/daggerok</url>
+    </repository>
+  </repositories>
+  
+  <dependencies>
+    <dependency>
+      <groupId>com.github.daggerok</groupId>
+      <artifactId>kotlenide</artifactId>
+      <version>0.0.1</version>
+    </dependency>
+  </dependencies>
+</project>
 ```
 <!--
 ### jitpack gradle
@@ -94,19 +98,21 @@ dependencies {
 **pom.xml**
 
 ```xml
-<repositories>
-  <repository>
-    <id>jitpack.io</id>
-    <url>https://jitpack.io</url>
-  </repository>
-</repositories>
-
-<dependencies>
-  <dependency>
-    <groupId>com.github.daggerok</groupId>
-    <artifactId>kotlenide</artifactId>
-    <version>0.0.1</version>
-  </dependency>
-</dependencies>
+<project>
+  <repositories>
+    <repository>
+      <id>jitpack.io</id>
+      <url>https://jitpack.io</url>
+    </repository>
+  </repositories>
+  
+  <dependencies>
+    <dependency>
+      <groupId>com.github.daggerok</groupId>
+      <artifactId>kotlenide</artifactId>
+      <version>0.0.1</version>
+    </dependency>
+  </dependencies>
+<project>
 ```
 -->

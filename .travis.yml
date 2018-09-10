@@ -74,27 +74,24 @@ before_deploy:
 #deploy release artifacts to bintray jcenter and maven central repositories:
 - chmod 0600 .gnupg/gpg.conf
 #
-- test ".${TRAVIS_BRANCH}" != ".release" || echo "deploy drafted release to bintray jcenter"
-- test ".${TRAVIS_BRANCH}" != ".release" || mkdir -p ~/.gradle
-- test ".${TRAVIS_BRANCH}" != ".release" || echo 'bintrayUser=daggerok'           >> ~/.gradle/gradle.properties
-- test ".${TRAVIS_BRANCH}" != ".release" || echo "bintrayApiKey=$BINTRAY_API_KEY" >> ~/.gradle/gradle.properties
-- test ".${TRAVIS_BRANCH}" != ".release" || ./gradlew clean assemble >/dev/null
-- test ".${TRAVIS_BRANCH}" != ".release" || ./gradlew -S :kotlenide:bintrayUpload -m
-- test ".${TRAVIS_BRANCH}" != ".release" || ./gradlew -S :kotlenide:bintrayUpload # -x text
+- echo "deploy drafted release to bintray jcenter"
+- mkdir -p ~/.gradle
+- echo 'bintrayUser=daggerok'           >> ~/.gradle/gradle.properties
+- echo "bintrayApiKey=$BINTRAY_API_KEY" >> ~/.gradle/gradle.properties
+- ./gradlew clean assemble >/dev/null
+#- ./gradlew -S :kotlenide:bintrayUpload -m
+- ./gradlew -S :kotlenide:bintrayUpload # -x text
 #
-- test ".${TRAVIS_BRANCH}" != ".release" || echo "deploy drafted release to maven central"
-- |
-  if [ ".${TRAVIS_BRANCH}" = ".release" ]; then
-    mkdir -p ~/.gradle
-    echo 'ossrhUsername=daggerok'                               >> ~/.gradle/gradle.properties
-    echo "ossrhPassword=$OSSRH_PASSWORD"                        >> ~/.gradle/gradle.properties
-    echo "signing.keyId=$SIGNING_KEY_ID"                        >> ~/.gradle/gradle.properties
-    echo "signing.password=$SIGNING_PASSWORD"                   >> ~/.gradle/gradle.properties
-    echo "signing.secretKeyRingFile=$(pwd)/.gnupg/secring.gpg"  >> ~/.gradle/gradle.properties
-    ./gradlew clean assemble >/dev/null
-    ./gradlew -Si :kotlenide:uploadArchives -Pmaven-central -m
-    ./gradlew -Si :kotlenide:uploadArchives -Pmaven-central # -x test
-  fi
+- echo "deploy drafted release to maven central"
+- mkdir -p ~/.gradle
+- echo 'ossrhUsername=daggerok'                              >> ~/.gradle/gradle.properties
+- echo "ossrhPassword=$OSSRH_PASSWORD"                       >> ~/.gradle/gradle.properties
+- echo "signing.keyId=$SIGNING_KEY_ID"                       >> ~/.gradle/gradle.properties
+- echo "signing.password=$SIGNING_PASSWORD"                  >> ~/.gradle/gradle.properties
+- echo "signing.secretKeyRingFile=$(pwd)/.gnupg/secring.gpg" >> ~/.gradle/gradle.properties
+- ./gradlew clean assemble >/dev/null
+#- ./gradlew -Si :kotlenide:uploadArchives -Pmaven-central -m
+- ./gradlew -Si :kotlenide:uploadArchives -Pmaven-central # -x test
 #
 - ./gradlew clean
 - ./mvnw -Pdocs process-resources >/dev/null
@@ -107,10 +104,10 @@ deploy:
   # travis encrypt GITHUB_TOKEN=<your github repo token> --add
   github-token: "$GITHUB_TOKEN"
   keep-history: true
-  on:
-    branch: master
   local-dir: target/generated-docs
   target_branch: gh-pages
+  on:
+    tags: true
 
 before_cache:
 - for item in $(find ~/.gradle -name "*.lock");

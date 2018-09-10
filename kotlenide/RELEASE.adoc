@@ -54,3 +54,7 @@ echo 'signing.secretKeyRingFile=/Users/mak/.gnupg/secring.gpg' >> ~/.gradle/grad
 or follow link:https://central.sonatype.org/pages/releasing-the-deployment.html[these] instructions for details
 
 link:https://www.youtube.com/watch?v=b5D2EBjLp40&feature=youtu.be[see for details YouTube: 04 - Accessing OSS-RH - Easy Publishing to Central Repository]
+
+== publish artifact
+
+To trigger automatic release build and artifacts uploads just publish GitHub release tag
