@@ -13,7 +13,7 @@ buildscript {
 
 dependencies {
   testImplementation "com.codeborne:selenide:$selenideVersion"
-  //testImplementation 'com.github.daggerok:kotlenide:0.0.1'
+  //testImplementation 'com.github.daggerok:kotlenide:0.0.2'
   testImplementation project(":kotlenide")
   testRuntimeOnly "ch.qos.logback:logback-classic:$logbackVersion"
 }

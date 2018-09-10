@@ -1,4 +1,4 @@
-# kotlenide 0.0.1 release
+# kotlenide 0.0.2 release
 
 [![kotlenide](https://www.bintray.com/docs/images/bintray_badge_color.png)](https://bintray.com/daggerok/daggerok/kotlenide?source=watch)
 
@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-  compile 'com.github.daggerok:kotlenide:0.0.1'
+  compile 'com.github.daggerok:kotlenide:0.0.2'
 }
 ```
 
@@ -26,7 +26,7 @@ dependencies {
     <dependency>
       <groupId>com.github.daggerok</groupId>
       <artifactId>kotlenide</artifactId>
-      <version>0.0.1</version>
+      <version>0.0.2</version>
     </dependency>
   </dependencies>
   
@@ -52,7 +52,7 @@ repositories {
 }
 
 dependencies {
-  compile 'com.github.daggerok:kotlenide:0.0.1'
+  compile 'com.github.daggerok:kotlenide:0.0.2'
 }
 ```
 
@@ -73,7 +73,7 @@ dependencies {
     <dependency>
       <groupId>com.github.daggerok</groupId>
       <artifactId>kotlenide</artifactId>
-      <version>0.0.1</version>
+      <version>0.0.2</version>
     </dependency>
   </dependencies>
 </project>
@@ -89,7 +89,7 @@ repositories {
 }
 
 dependencies {
-  compile 'com.github.daggerok:kotlenide:0.0.1'
+  compile 'com.github.daggerok:kotlenide:0.0.2'
 }
 ```
 
@@ -110,7 +110,7 @@ dependencies {
     <dependency>
       <groupId>com.github.daggerok</groupId>
       <artifactId>kotlenide</artifactId>
-      <version>0.0.1</version>
+      <version>0.0.2</version>
     </dependency>
   </dependencies>
 <project>

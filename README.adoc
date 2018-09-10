@@ -1,7 +1,4 @@
-= link:https://kotlinlang.org/[kotlin] + link:http://selenide.org/[selenide] = kotlenide ❤️ image:https://travis-ci.org/daggerok/kotlenide.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/kotlenide"]
-
-Current status: in early development phase.
-Feedback, suggestions and any help are welcome!
+= link:https://kotlinlang.org/[kotlin] + link:http://selenide.org/[selenide] = kotlenide ❤️ image:https://travis-ci.org/daggerok/kotlenide.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/kotlenide"] image:https://api.bintray.com/packages/daggerok/daggerok/kotlenide/images/download.svg[link="https://bintray.com/bintray/jcenter?filterByPkgName=kotlenide"] image:https://maven-badges.herokuapp.com/maven-central/com.github.daggerok/kotlenide/badge.svg?style=plastic["Maven Central", link="https://maven-badges.herokuapp.com/maven-central/com.github.daggerok/kotlenide"]
 
 ////
 image:https://gitlab.com/daggerok/kotlenide/badges/master/build.svg["Build Status", link="https://gitlab.com/daggerok/kotlenide/-/jobs"]
@@ -14,6 +11,12 @@ image:https://img.shields.io/bitbucket/pipelines/daggerok/kotlenide.svg["Build S
 image::./logo.png[]
 
 //end::logo[]
+
+Status: in development:
+
+- Latest release: 0.0.1
+- Current version: 0.0.2
+- Feedback, suggestions any help or contributions are welcome!
 
 == Usage (TODO)
 //tag::usage[]
@@ -53,7 +56,7 @@ class `Awesome Kotlenide Tests` {
   }
 
   @Test fun `should open given URL in chrome and assert using infix extension functions`() {
-    "https://google.com".openIn("chrome") {
+    "https://google.com".open("chrome") {
       find("body") {
         this.find(".ololo") shouldNotBe exist
         find(".trololo") shouldBeNot visible
