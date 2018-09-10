@@ -3,8 +3,8 @@
 <?asciidoc-numbered?>
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
-<title>kotlenide (0.0.2)</title>
-<date>2018-09-01 05:04:35 UTC</date>
+<title>kotlenide (0.0.1)</title>
+<date>2018-09-10 01:25:52 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -15,8 +15,8 @@
 <authorinitials>MK</authorinitials>
 <revhistory>
 <revision>
-<revnumber>0.0.2</revnumber>
-<date>2018-09-01 05:04:35 UTC</date>
+<revnumber>0.0.1</revnumber>
+<date>2018-09-10 01:25:52 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -41,8 +41,19 @@
   @Test fun `selenide using idiomatic kotlin should be awesome`() {
     "https://google.com".open {
       find("body") {
-        this contains "Gmail"
-        this has "G"
+        this contains "G"
+        this has "mail"
+        close()
+      }
+    }
+  }
+
+  @Test fun `should open given URL in chrome using String extension function and assert by text condition`() {
+    "https://google.com".openIn("chrome") {
+      find("body") {
+        this.find(".ololo") shouldNotBe exist
+        find(".trololo") shouldBeNot visible
+        this shouldHaveText "Gmail"
         close()
       }
     }
