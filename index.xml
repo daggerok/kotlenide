@@ -4,7 +4,7 @@
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
 <title>kotlenide (0.0.1)</title>
-<date>2018-09-10 02:38:03 UTC</date>
+<date>2018-09-10 02:45:51 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -16,7 +16,7 @@
 <revhistory>
 <revision>
 <revnumber>0.0.1</revnumber>
-<date>2018-09-10 02:38:03 UTC</date>
+<date>2018-09-10 02:45:51 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -40,8 +40,16 @@
 so we assume you already have one in your project dependencies.
 Otherwise&#8201;&#8212;&#8201;just add some together with kotlenide&#8230;&#8203;</simpara>
 </note>
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="https://www.bintray.com/docs/images/bintray_badge_color.png" align="left"/>
+</imageobject>
+<textobject><phrase>Maven</phrase></textobject>
+</mediaobject>
+</informalfigure>
 <formalpara>
-<title>gradle</title>
+<title><link xl:href="https://bintray.com/daggerok/daggerok/kotlenide?source=watch">gradle</link></title>
 <para>
 <programlisting language="gradle" linenumbering="unnumbered">dependencies {
   testImplementation 'com.github.daggerok:kotlenide:0.0.1'
@@ -50,8 +58,16 @@ Otherwise&#8201;&#8212;&#8201;just add some together with kotlenide&#8230;&#8203
 }</programlisting>
 </para>
 </formalpara>
+<informalfigure>
+<mediaobject>
+<imageobject>
+<imagedata fileref="http://maven.apache.org/images/maven-logo-black-on-white.png" align="left"/>
+</imageobject>
+<textobject><phrase>Maven</phrase></textobject>
+</mediaobject>
+</informalfigure>
 <formalpara>
-<title>maven</title>
+<title><link xl:href="https://maven-badges.herokuapp.com/maven-central/com.github.daggerok/kotlenide">maven</link></title>
 <para>
 <programlisting language="xml" linenumbering="unnumbered">&lt;project&gt;
   &lt;dependencies&gt;
