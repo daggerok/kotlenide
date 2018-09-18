@@ -14,8 +14,8 @@ image::./logo.png[]
 
 Status: in development:
 
-- Latest release: 0.0.1
-- Current version: 0.0.2
+- Latest release: 0.0.2
+- Current version: 0.0.3
 - Feedback, suggestions any help or contributions are welcome!
 
 == Usage (TODO)
@@ -88,9 +88,9 @@ image::https://www.bintray.com/docs/images/bintray_badge_color.png[Maven,align="
 [source,gradle]
 ----
 dependencies {
-  testImplementation 'com.github.daggerok:kotlenide:0.0.1'
+  testImplementation 'com.github.daggerok:kotlenide:0.0.2'
   // Kotlenide also requires Selenide dependency:
-  testImplementation 'com.codeborne:selenide:4.14.0'
+  testImplementation 'com.codeborne:selenide:4.14.1'
 }
 ----
 
@@ -104,14 +104,14 @@ image::http://maven.apache.org/images/maven-logo-black-on-white.png[Maven,align=
     <dependency>
       <groupId>com.github.daggerok</groupId>
       <artifactId>kotlenide</artifactId>
-      <version>0.0.1</version>
+      <version>0.0.2</version>
       <scope>test</scope>
     </dependency>
     <!-- Kotlenide also requires Selenide dependency: -->
     <dependency>
       <groupId>com.codeborne</groupId>
       <artifactId>selenide</artifactId>
-      <version>4.14.0</version>
+      <version>4.14.1</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

@@ -1,9 +1,9 @@
 allprojects {
   apply plugin: 'java'
 
-  version = '0.0.2'
-  group = 'com.github.daggerok'
-  description = 'Kotlin + Selenide is: ❤️ Kotlenide!'
+  group = project.appGroup
+  version = project.appVersion
+  description = project.appDescription
   sourceCompatibility = targetCompatibility = "$javaVersion"
 
   compileJava {

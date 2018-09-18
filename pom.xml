@@ -25,8 +25,8 @@
   </modules>
 
   <properties>
-    <kotlin.version>1.2.61</kotlin.version>
-    <selenide.version>4.14.0</selenide.version>
+    <kotlin.version>1.2.70</kotlin.version>
+    <selenide.version>4.14.1</selenide.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
