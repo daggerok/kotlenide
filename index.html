@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.6.1">
 <meta name="author" content="Maksim Kostromin">
-<title>kotlenide (0.0.1)</title>
+<title>kotlenide (0.0.2)</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -458,12 +458,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
-<h1>kotlenide (0.0.1) <span class="image"><a class="image" href="https://github.com/daggerok/kotlenide"><img src="https://travis-ci.org/daggerok/kotlenide.svg?branch=master" alt="Build Status"></a></span></h1>
+<h1>kotlenide (0.0.2) <span class="image"><a class="image" href="https://github.com/daggerok/kotlenide"><img src="https://travis-ci.org/daggerok/kotlenide.svg?branch=master" alt="Build Status"></a></span></h1>
 <div class="details">
 <span id="author" class="author">Maksim Kostromin</span><br>
 <span id="email" class="email"><a href="mailto:daggerok@gmail.com">daggerok@gmail.com</a></span><br>
-<span id="revnumber">version 0.0.1,</span>
-<span id="revdate">2018-09-10 04:04:02 UTC</span>
+<span id="revnumber">version 0.0.2,</span>
+<span id="revdate">2018-09-18 01:47:23 UTC</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -514,9 +514,9 @@ Otherwise&#8201;&#8212;&#8201;just add some together with kotlenide&#8230;&#8203
 <div class="title"><a href="https://bintray.com/daggerok/daggerok/kotlenide?source=watch">gradle</a></div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-gradle hljs" data-lang="gradle">dependencies {
-  testImplementation 'com.github.daggerok:kotlenide:0.0.1'
+  testImplementation 'com.github.daggerok:kotlenide:0.0.2'
   // Kotlenide also requires Selenide dependency:
-  testImplementation 'com.codeborne:selenide:4.14.0'
+  testImplementation 'com.codeborne:selenide:4.14.1'
 }</code></pre>
 </div>
 </div>
@@ -533,14 +533,14 @@ Otherwise&#8201;&#8212;&#8201;just add some together with kotlenide&#8230;&#8203
     &lt;dependency&gt;
       &lt;groupId&gt;com.github.daggerok&lt;/groupId&gt;
       &lt;artifactId&gt;kotlenide&lt;/artifactId&gt;
-      &lt;version&gt;0.0.1&lt;/version&gt;
+      &lt;version&gt;0.0.2&lt;/version&gt;
       &lt;scope&gt;test&lt;/scope&gt;
     &lt;/dependency&gt;
     &lt;!-- Kotlenide also requires Selenide dependency: --&gt;
     &lt;dependency&gt;
       &lt;groupId&gt;com.codeborne&lt;/groupId&gt;
       &lt;artifactId&gt;selenide&lt;/artifactId&gt;
-      &lt;version&gt;4.14.0&lt;/version&gt;
+      &lt;version&gt;4.14.1&lt;/version&gt;
       &lt;scope&gt;test&lt;/scope&gt;
     &lt;/dependency&gt;
   &lt;/dependencies&gt;
@@ -562,7 +562,7 @@ Otherwise&#8201;&#8212;&#8201;just add some together with kotlenide&#8230;&#8203
   }
 
   @Test fun `should open given URL in chrome and assert using infix extension functions`() {
-    "https://google.com".openIn("chrome") {
+    "https://google.com".open("chrome") {
       find("body") {
         this.find(".ololo") shouldNotBe exist
         find(".trololo") shouldBeNot visible
@@ -782,8 +782,8 @@ Otherwise&#8201;&#8212;&#8201;just add some together with kotlenide&#8230;&#8203
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 0.0.1<br>
-Last updated 2018-09-10 04:04:02 UTC
+Version 0.0.2<br>
+Last updated 2018-09-18 01:47:23 UTC
 </div>
 </div>
 <!-- jquery -->

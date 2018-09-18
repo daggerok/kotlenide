@@ -3,8 +3,8 @@
 <?asciidoc-numbered?>
 <book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
 <info>
-<title>kotlenide (0.0.1)</title>
-<date>2018-09-10 04:04:02 UTC</date>
+<title>kotlenide (0.0.2)</title>
+<date>2018-09-18 01:47:23 UTC</date>
 <author>
 <personname>
 <firstname>Maksim</firstname>
@@ -15,8 +15,8 @@
 <authorinitials>MK</authorinitials>
 <revhistory>
 <revision>
-<revnumber>0.0.1</revnumber>
-<date>2018-09-10 04:04:02 UTC</date>
+<revnumber>0.0.2</revnumber>
+<date>2018-09-18 01:47:23 UTC</date>
 <authorinitials>MK</authorinitials>
 </revision>
 </revhistory>
@@ -52,9 +52,9 @@ Otherwise&#8201;&#8212;&#8201;just add some together with kotlenide&#8230;&#8203
 <title><link xl:href="https://bintray.com/daggerok/daggerok/kotlenide?source=watch">gradle</link></title>
 <para>
 <programlisting language="gradle" linenumbering="unnumbered">dependencies {
-  testImplementation 'com.github.daggerok:kotlenide:0.0.1'
+  testImplementation 'com.github.daggerok:kotlenide:0.0.2'
   // Kotlenide also requires Selenide dependency:
-  testImplementation 'com.codeborne:selenide:4.14.0'
+  testImplementation 'com.codeborne:selenide:4.14.1'
 }</programlisting>
 </para>
 </formalpara>
@@ -74,14 +74,14 @@ Otherwise&#8201;&#8212;&#8201;just add some together with kotlenide&#8230;&#8203
     &lt;dependency&gt;
       &lt;groupId&gt;com.github.daggerok&lt;/groupId&gt;
       &lt;artifactId&gt;kotlenide&lt;/artifactId&gt;
-      &lt;version&gt;0.0.1&lt;/version&gt;
+      &lt;version&gt;0.0.2&lt;/version&gt;
       &lt;scope&gt;test&lt;/scope&gt;
     &lt;/dependency&gt;
     &lt;!-- Kotlenide also requires Selenide dependency: --&gt;
     &lt;dependency&gt;
       &lt;groupId&gt;com.codeborne&lt;/groupId&gt;
       &lt;artifactId&gt;selenide&lt;/artifactId&gt;
-      &lt;version&gt;4.14.0&lt;/version&gt;
+      &lt;version&gt;4.14.1&lt;/version&gt;
       &lt;scope&gt;test&lt;/scope&gt;
     &lt;/dependency&gt;
   &lt;/dependencies&gt;
@@ -103,7 +103,7 @@ Otherwise&#8201;&#8212;&#8201;just add some together with kotlenide&#8230;&#8203
   }
 
   @Test fun `should open given URL in chrome and assert using infix extension functions`() {
-    "https://google.com".openIn("chrome") {
+    "https://google.com".open("chrome") {
       find("body") {
         this.find(".ololo") shouldNotBe exist
         find(".trololo") shouldBeNot visible
