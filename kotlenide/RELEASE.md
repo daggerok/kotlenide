@@ -1,4 +1,12 @@
-# kotlenide 0.0.2 release
+# kotlenide 0.0.3 release
+
+<!-- 
+## release notes
+
+- Update Kotlin version up to 1.2.70
+-->
+
+## installation
 
 [![kotlenide](https://www.bintray.com/docs/images/bintray_badge_color.png)](https://bintray.com/daggerok/daggerok/kotlenide?source=watch)
 
@@ -12,7 +20,7 @@ repositories {
 }
 
 dependencies {
-  compile 'com.github.daggerok:kotlenide:0.0.2'
+  compile 'com.github.daggerok:kotlenide:0.0.3'
 }
 ```
 
@@ -26,7 +34,7 @@ dependencies {
     <dependency>
       <groupId>com.github.daggerok</groupId>
       <artifactId>kotlenide</artifactId>
-      <version>0.0.2</version>
+      <version>0.0.3</version>
     </dependency>
   </dependencies>
   
@@ -52,7 +60,7 @@ repositories {
 }
 
 dependencies {
-  compile 'com.github.daggerok:kotlenide:0.0.2'
+  compile 'com.github.daggerok:kotlenide:0.0.3'
 }
 ```
 
@@ -73,7 +81,7 @@ dependencies {
     <dependency>
       <groupId>com.github.daggerok</groupId>
       <artifactId>kotlenide</artifactId>
-      <version>0.0.2</version>
+      <version>0.0.3</version>
     </dependency>
   </dependencies>
 </project>
@@ -89,7 +97,7 @@ repositories {
 }
 
 dependencies {
-  compile 'com.github.daggerok:kotlenide:0.0.2'
+  compile 'com.github.daggerok:kotlenide:0.0.3'
 }
 ```
 
@@ -110,7 +118,7 @@ dependencies {
     <dependency>
       <groupId>com.github.daggerok</groupId>
       <artifactId>kotlenide</artifactId>
-      <version>0.0.2</version>
+      <version>0.0.3</version>
     </dependency>
   </dependencies>
 <project>
