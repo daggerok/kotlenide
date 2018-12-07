@@ -177,6 +177,7 @@ include::../README.adoc[tags=links]
 ifdef::backend-html5[- link:./index.pdf[Documentation in PFD format]]
 - link:{github-url}[GitHub repo]
 - link:https://daggerok.github.io/{root-project-name}[GitHub pages]
+- link:https://www.youtube.com/watch?v=zYNbsVv9oN0[Kotlin DSL]
 
 == License
 include::../README.adoc[tags=license]
